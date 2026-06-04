@@ -8,10 +8,10 @@ from frappe.query_builder import Criterion
 import erpnext
 from erpnext.accounts.utils import build_qb_match_conditions
 from erpnext.setup.doctype.employee.employee import InactiveEmployeeStatusError
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestEmployee(ERPNextTestSuite):
+class TestEmployee(LiwaERPTestSuite):
 	def test_employee_status_left(self):
 		employee1 = make_employee("test_employee_1@company.com", company="_Test Company")
 		employee2 = make_employee("test_employee_2@company.com", company="_Test Company")

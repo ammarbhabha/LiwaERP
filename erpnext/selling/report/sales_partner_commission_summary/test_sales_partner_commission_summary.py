@@ -10,10 +10,10 @@ from erpnext.selling.report.sales_partner_commission_summary.sales_partner_commi
 	SALES_TRANSACTION_DOCTYPES,
 )
 from erpnext.stock.doctype.stock_entry.test_stock_entry import make_stock_entry
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class SalesPartnerSummaryReportTestMixin(ERPNextTestSuite):
+class SalesPartnerSummaryReportTestMixin(LiwaERPTestSuite):
 	def assert_doctype_filters(self):
 		self.filters["doctype"] = "Purchase Invoice"
 

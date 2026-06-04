@@ -11,10 +11,10 @@ from erpnext.manufacturing.doctype.bom_update_tool.bom_update_tool import (
 	enqueue_replace_bom,
 	enqueue_update_cost,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBOMUpdateLog(ERPNextTestSuite):
+class TestBOMUpdateLog(LiwaERPTestSuite):
 	"Test BOM Update Tool Operations via BOM Update Log."
 
 	def setUp(self):

@@ -5,10 +5,10 @@ import frappe
 from frappe.utils import add_days, today
 
 from erpnext.buying.doctype.purchase_order.test_purchase_order import create_purchase_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestEmailDigest(ERPNextTestSuite):
+class TestEmailDigest(LiwaERPTestSuite):
 	def test_purchase_orders_items_overdue_list_is_filtered_by_company(self):
 		digest = create_email_digest(
 			company="_Test Company",

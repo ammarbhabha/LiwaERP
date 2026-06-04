@@ -1,11 +1,11 @@
 """
 Welcome to the Deprecation Dumpster: Where Old Code Goes to Party! 🎉🗑️
 
-This file is the final resting place (or should we say, "retirement home"?) for all the deprecated functions and methods of the ERPNext app. It's like a code nursing home, but with more monkey-patching and less bingo.
+This file is the final resting place (or should we say, "retirement home"?) for all the deprecated functions and methods of the LiwaERP app. It's like a code nursing home, but with more monkey-patching and less bingo.
 
 Each function or method that checks in here comes with its own personalized decorator, complete with:
 1. The date it was marked for deprecation (its "over the hill" birthday)
-2. The ERPNext version at the beginning of which it becomes an error and at the end of which it will be removed (its "graduation" to the great codebase in the sky)
+2. The LiwaERP version at the beginning of which it becomes an error and at the end of which it will be removed (its "graduation" to the great codebase in the sky)
 3. A user-facing note on alternative solutions (its "parting wisdom")
 
 Warning: The global namespace herein is more patched up than a sailor's favorite pair of jeans. Proceed with caution and a sense of humor!
@@ -25,18 +25,18 @@ from frappe.deprecation_dumpster import Color, _deprecated, colorize
 
 # we use Warning because DeprecationWarning has python default filters which would exclude them from showing
 # see also frappe.__init__ enabling them when a dev_server
-class ERPNextDeprecationError(Warning):
+class LiwaERPDeprecationError(Warning):
 	"""Deprecated feature in current version.
 
 	Raises an error by default but can be configured via PYTHONWARNINGS in an emergency.
 	"""
 
 
-class ERPNextDeprecationWarning(Warning):
+class LiwaERPDeprecationWarning(Warning):
 	"""Deprecated feature in next version"""
 
 
-class PendingERPNextDeprecationWarning(ERPNextDeprecationWarning):
+class PendingLiwaERPDeprecationWarning(LiwaERPDeprecationWarning):
 	"""Deprecated feature in develop beyond next version.
 
 	Warning ignored by default.
@@ -46,19 +46,19 @@ class PendingERPNextDeprecationWarning(ERPNextDeprecationWarning):
 	"""
 
 
-warnings.simplefilter("error", ERPNextDeprecationError)
-warnings.simplefilter("ignore", PendingERPNextDeprecationWarning)
+warnings.simplefilter("error", LiwaERPDeprecationError)
+warnings.simplefilter("ignore", PendingLiwaERPDeprecationWarning)
 
 
-class V15ERPNextDeprecationWarning(ERPNextDeprecationError):
+class V15LiwaERPDeprecationWarning(LiwaERPDeprecationError):
 	pass
 
 
-class V16ERPNextDeprecationWarning(ERPNextDeprecationWarning):
+class V16LiwaERPDeprecationWarning(LiwaERPDeprecationWarning):
 	pass
 
 
-class V17ERPNextDeprecationWarning(PendingERPNextDeprecationWarning):
+class V17LiwaERPDeprecationWarning(PendingLiwaERPDeprecationWarning):
 	pass
 
 
@@ -66,7 +66,7 @@ def __get_deprecation_class(graduation: str | None = None, class_name: str | Non
 	if graduation:
 		# Scrub the graduation string to ensure it's a valid class name
 		cleaned_graduation = re.sub(r"\W|^(?=\d)", "_", graduation.upper())
-		class_name = f"{cleaned_graduation}ERPNextDeprecationWarning"
+		class_name = f"{cleaned_graduation}LiwaERPDeprecationWarning"
 		current_module = sys.modules[__name__]
 	try:
 		return getattr(current_module, class_name)

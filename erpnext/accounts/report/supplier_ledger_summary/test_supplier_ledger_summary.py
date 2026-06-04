@@ -4,10 +4,10 @@ from frappe.utils import today
 from erpnext.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
 from erpnext.accounts.report.supplier_ledger_summary.supplier_ledger_summary import execute
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSupplierLedgerSummary(ERPNextTestSuite, AccountsTestMixin):
+class TestSupplierLedgerSummary(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		self.create_company()
 		self.create_supplier()

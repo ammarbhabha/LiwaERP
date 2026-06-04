@@ -14,10 +14,10 @@ from erpnext.accounts.doctype.cost_center_allocation.cost_center_allocation impo
 	WrongPercentageAllocation,
 )
 from erpnext.accounts.doctype.journal_entry.test_journal_entry import make_journal_entry
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestCostCenterAllocation(ERPNextTestSuite):
+class TestCostCenterAllocation(LiwaERPTestSuite):
 	def setUp(self):
 		cost_centers = [
 			"Main Cost Center 1",
@@ -190,7 +190,7 @@ class TestCostCenterAllocation(ERPNextTestSuite):
 		coa2.cancel()
 		jv.cancel()
 
-	@ERPNextTestSuite.change_settings("System Settings", {"rounding_method": "Commercial Rounding"})
+	@LiwaERPTestSuite.change_settings("System Settings", {"rounding_method": "Commercial Rounding"})
 	def test_debit_credit_on_cost_center_allocation_for_commercial_rounding(self):
 		from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
 

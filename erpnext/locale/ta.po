@@ -16547,7 +16547,7 @@ msgstr ""
 
 #. Label of the user_id (Data) field in DocType 'Employee Group Table'
 #: erpnext/setup/doctype/employee_group_table/employee_group_table.json
-msgid "ERPNext User ID"
+msgid "LiwaERP User ID"
 msgstr ""
 
 #. Option for the 'Update frequency of Project' (Select) field in DocType
@@ -21406,11 +21406,11 @@ msgid "If this item has variants, then it cannot be selected in sales orders etc
 msgstr ""
 
 #: erpnext/buying/doctype/buying_settings/buying_settings.js:27
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
+msgid "If this option is configured 'Yes', LiwaERP will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
 msgstr ""
 
 #: erpnext/buying/doctype/buying_settings/buying_settings.js:34
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
+msgid "If this option is configured 'Yes', LiwaERP will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
 msgstr ""
 
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.js:10
@@ -21436,7 +21436,7 @@ msgid "If yes, then this warehouse will be used to store rejected materials"
 msgstr ""
 
 #: erpnext/stock/doctype/item/item.js:1046
-msgid "If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item."
+msgid "If you are maintaining stock of this Item in your Inventory, LiwaERP will make a stock ledger entry for each transaction of this item."
 msgstr ""
 
 #. Description of the 'Unreconciled Entries' (Section Break) field in DocType
@@ -26083,7 +26083,7 @@ msgstr ""
 #. 'Accounts Settings'
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #, python-format
-msgid "Learn about <a href=\"https://docs.erpnext.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20ERPNext,Invoice%20against%20a%20primary%20Supplier.\">Common Party</a>"
+msgid "Learn about <a href=\"https://docs.erpnext.com/docs/v13/user/manual/en/accounts/articles/common_party_accounting#:~:text=Common%20Party%20Accounting%20in%20LiwaERP,Invoice%20against%20a%20primary%20Supplier.\">Common Party</a>"
 msgstr ""
 
 #. Label of the leave_encashed (Select) field in DocType 'Employee'
@@ -50681,7 +50681,7 @@ msgid "This action will stop future billing. Are you sure you want to cancel thi
 msgstr ""
 
 #: erpnext/accounts/doctype/bank_account/bank_account.js:35
-msgid "This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?"
+msgid "This action will unlink this account from any external service integrating LiwaERP with your bank accounts. It cannot be undone. Are you certain ?"
 msgstr ""
 
 #: erpnext/assets/doctype/asset/asset.py:426
@@ -54691,7 +54691,7 @@ msgid "Vouchers"
 msgstr ""
 
 #: erpnext/patches/v15_0/remove_exotel_integration.py:32
-msgid "WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration."
+msgid "WARNING: Exotel app has been separated from LiwaERP, please install the app to continue using Exotel integration."
 msgstr ""
 
 #. Label of the wip_composite_asset (Link) field in DocType 'Purchase Invoice
@@ -55992,7 +55992,7 @@ msgid "Zip File"
 msgstr ""
 
 #: erpnext/stock/reorder_item.py:382
-msgid "[Important] [ERPNext] Auto Reorder Errors"
+msgid "[Important] [LiwaERP] Auto Reorder Errors"
 msgstr ""
 
 #: erpnext/controllers/status_updater.py:287

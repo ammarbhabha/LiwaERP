@@ -11,10 +11,10 @@ from erpnext.manufacturing.doctype.work_order.test_work_order import make_wo_ord
 from erpnext.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
 from erpnext.stock.doctype.item.test_item import make_item
 from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestItemWiseInventoryAccount(ERPNextTestSuite):
+class TestItemWiseInventoryAccount(LiwaERPTestSuite):
 	def setUp(self):
 		self.company = make_company()
 		self.company_abbr = frappe.db.get_value("Company", self.company, "abbr")

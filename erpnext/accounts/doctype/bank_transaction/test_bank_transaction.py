@@ -18,10 +18,10 @@ from erpnext.accounts.doctype.payment_entry.test_payment_entry import get_paymen
 from erpnext.accounts.doctype.pos_profile.test_pos_profile import make_pos_profile
 from erpnext.accounts.doctype.purchase_invoice.test_purchase_invoice import make_purchase_invoice
 from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
-from erpnext.tests.utils import ERPNextTestSuite, if_lending_app_installed
+from erpnext.tests.utils import LiwaERPTestSuite, if_lending_app_installed
 
 
-class TestBankTransaction(ERPNextTestSuite):
+class TestBankTransaction(LiwaERPTestSuite):
 	def setUp(self):
 		make_pos_profile()
 
@@ -35,7 +35,7 @@ class TestBankTransaction(ERPNextTestSuite):
 		add_transactions(bank_account=bank_account)
 		add_vouchers(gl_account=gl_account)
 
-	# This test checks if ERPNext is able to provide a linked payment for a bank transaction based on the amount of the bank transaction.
+	# This test checks if LiwaERP is able to provide a linked payment for a bank transaction based on the amount of the bank transaction.
 	def test_linked_payments(self):
 		bank_transaction = frappe.get_doc(
 			"Bank Transaction",
@@ -104,7 +104,7 @@ class TestBankTransaction(ERPNextTestSuite):
 		self.assertEqual(bank_transaction.unallocated_amount, 1700)
 		self.assertEqual(bank_transaction.payment_entries, [])
 
-	# Check if ERPNext can correctly filter a linked payments based on the debit/credit amount
+	# Check if LiwaERP can correctly filter a linked payments based on the debit/credit amount
 	def test_debit_credit_output(self):
 		bank_transaction = frappe.get_doc(
 			"Bank Transaction",

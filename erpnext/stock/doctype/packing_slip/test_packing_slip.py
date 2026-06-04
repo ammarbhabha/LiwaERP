@@ -8,10 +8,10 @@ from erpnext.selling.doctype.product_bundle.test_product_bundle import make_prod
 from erpnext.stock.doctype.delivery_note.mapper import make_packing_slip
 from erpnext.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
 from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPackingSlip(ERPNextTestSuite):
+class TestPackingSlip(LiwaERPTestSuite):
 	def test_packing_slip(self):
 		# Step - 1: Create a Product Bundle
 		items = create_items()

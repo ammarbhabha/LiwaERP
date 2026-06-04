@@ -5,10 +5,10 @@ import frappe
 
 from erpnext.stock.doctype.item.test_item import make_item
 from erpnext.stock.utils import _create_bin
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBin(ERPNextTestSuite):
+class TestBin(LiwaERPTestSuite):
 	def test_concurrent_inserts(self):
 		"""Ensure no duplicates are possible in case of concurrent inserts"""
 		item_code = "_TestConcurrentBin"

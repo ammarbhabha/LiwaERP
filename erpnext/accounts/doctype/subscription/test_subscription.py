@@ -17,10 +17,10 @@ from frappe.utils.data import (
 
 from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_entry
 from erpnext.accounts.doctype.subscription.subscription import Subscription, get_prorata_factor, process_all
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSubscription(ERPNextTestSuite):
+class TestSubscription(LiwaERPTestSuite):
 	def setUp(self):
 		make_plans()
 		create_parties()
@@ -466,7 +466,7 @@ class TestSubscription(ERPNextTestSuite):
 		currency = frappe.db.get_value("Sales Invoice", subscription.invoices[0].name, "currency")
 		self.assertEqual(currency, "USD")
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"allow_multi_currency_invoices_against_single_party_account": 1},
 	)

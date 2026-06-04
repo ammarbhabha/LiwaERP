@@ -15,10 +15,10 @@ from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_pu
 from erpnext.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle import (
 	make_serial_batch_bundle,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAssetCapitalization(ERPNextTestSuite):
+class TestAssetCapitalization(LiwaERPTestSuite):
 	def setUp(self):
 		set_depreciation_settings_in_company()
 		create_asset_capitalization_data()

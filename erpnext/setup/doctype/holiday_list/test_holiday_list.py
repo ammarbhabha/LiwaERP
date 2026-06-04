@@ -7,10 +7,10 @@ import frappe
 from frappe.utils import getdate
 
 from erpnext.setup.doctype.holiday_list.holiday_list import local_country_name
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestHolidayList(ERPNextTestSuite):
+class TestHolidayList(LiwaERPTestSuite):
 	def test_holiday_list(self):
 		today_date = getdate()
 		test_holiday_dates = [today_date - timedelta(days=5), today_date - timedelta(days=4)]

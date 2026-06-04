@@ -5,10 +5,10 @@ import frappe
 
 from erpnext.accounts.doctype.promotional_scheme.promotional_scheme import TransactionExists
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPromotionalScheme(ERPNextTestSuite):
+class TestPromotionalScheme(LiwaERPTestSuite):
 	def setUp(self):
 		if frappe.db.exists("Promotional Scheme", "_Test Scheme"):
 			frappe.delete_doc("Promotional Scheme", "_Test Scheme")

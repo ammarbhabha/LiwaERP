@@ -4,7 +4,7 @@
 import frappe
 
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def test_create_test_data():
@@ -108,7 +108,7 @@ def test_create_test_data():
 		coupon_code.insert()
 
 
-class TestCouponCode(ERPNextTestSuite):
+class TestCouponCode(LiwaERPTestSuite):
 	def setUp(self):
 		test_create_test_data()
 

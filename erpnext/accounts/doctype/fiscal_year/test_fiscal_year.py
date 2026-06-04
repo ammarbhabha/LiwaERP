@@ -4,10 +4,10 @@
 import frappe
 from frappe.utils import now_datetime
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestFiscalYear(ERPNextTestSuite):
+class TestFiscalYear(LiwaERPTestSuite):
 	def test_extra_year(self):
 		if frappe.db.exists("Fiscal Year", "_Test Fiscal Year 2000"):
 			frappe.delete_doc("Fiscal Year", "_Test Fiscal Year 2000")

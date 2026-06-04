@@ -6,10 +6,10 @@ from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sal
 from erpnext.accounts.report.customer_ledger_summary.customer_ledger_summary import execute
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
 from erpnext.controllers.sales_and_purchase_return import make_return_doc
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestCustomerLedgerSummary(ERPNextTestSuite, AccountsTestMixin):
+class TestCustomerLedgerSummary(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		self.create_company()
 		self.create_customer()

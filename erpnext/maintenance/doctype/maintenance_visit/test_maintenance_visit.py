@@ -4,10 +4,10 @@
 import frappe
 from frappe.utils.data import today
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestMaintenanceVisit(ERPNextTestSuite):
+class TestMaintenanceVisit(LiwaERPTestSuite):
 	pass
 
 

@@ -1,21 +1,21 @@
 
 <div align="center">
     <a href="https://frappe.io/erpnext">
-	<img src="./erpnext/public/images/v16/erpnext.svg" alt="ERPNext Logo" height="80px" width="80px"/>
+	<img src="./erpnext/public/images/v16/erpnext.svg" alt="LiwaERP Logo" height="80px" width="80px"/>
     </a>
-    <h2>ERPNext</h2>
+    <h2>LiwaERP</h2>
     <div align="center">
         <p>Powerful, Intuitive and Open-Source ERP</p>
     </div>
 
-[![Learn on Frappe School](https://img.shields.io/badge/Frappe%20School-Learn%20ERPNext-blue?style=flat-square)](https://frappe.school)<br><br>
+[![Learn on Frappe School](https://img.shields.io/badge/Frappe%20School-Learn%20LiwaERP-blue?style=flat-square)](https://frappe.school)<br><br>
 [![CI](https://github.com/frappe/erpnext/actions/workflows/server-tests-mariadb.yml/badge.svg?event=schedule)](https://github.com/frappe/erpnext/actions/workflows/server-tests-mariadb.yml)
 [![docker pulls](https://img.shields.io/docker/pulls/frappe/erpnext.svg)](https://hub.docker.com/r/frappe/erpnext)
 
 </div>
 
 <div align="center">
-	<img src="./erpnext/public/images/v16/hero_image.png" alt="ERPNext Hero Image"/>
+	<img src="./erpnext/public/images/v16/hero_image.png" alt="LiwaERP Hero Image"/>
 </div>
 
 <div align="center">
@@ -26,13 +26,13 @@
 	<a href="https://docs.frappe.io/erpnext/">Documentation</a>
 </div>
 
-## ERPNext
+## LiwaERP
 
 100% Open-Source ERP System to help you run your business.
 
 ### Motivation
 
-Running a business is a complex task - handling invoices, tracking stock, managing personnel, and other daily operations. In a market where software is sold separately to manage each of these tasks, ERPNext does all of the above and more, for free.
+Running a business is a complex task - handling invoices, tracking stock, managing personnel, and other daily operations. In a market where software is sold separately to manage each of these tasks, LiwaERP does all of the above and more, for free.
 
 ### Key Features
 
@@ -106,7 +106,7 @@ Then run:
 ```sh
 docker compose -f pwd.yml up -d
 ```
-Wait for a couple of minutes for ERPNext site to be created or check the `create-site` container logs before opening browser on port `8080`. (username: `Administrator`, password: `admin`)
+Wait for a couple of minutes for LiwaERP site to be created or check the `create-site` container logs before opening browser on port `8080`. (username: `Administrator`, password: `admin`)
 
 See [Frappe Docker](https://github.com/frappe/frappe_docker/blob/main/docs/01-getting-started/03-arm64.md) for ARM based docker setup
 
@@ -116,7 +116,7 @@ See [Frappe Docker](https://github.com/frappe/frappe_docker/blob/main/docs/01-ge
 
 The Easy Way: our install script for bench will install all dependencies (e.g. MariaDB). See https://github.com/frappe/bench for more details.
 
-New passwords will be created for the ERPNext "Administrator" user, the MariaDB root user, and the Frappe user (the script displays the passwords and saves them to ~/frappe_passwords.txt).
+New passwords will be created for the LiwaERP "Administrator" user, the MariaDB root user, and the Frappe user (the script displays the passwords and saves them to ~/frappe_passwords.txt).
 
 
 ### Local
@@ -134,10 +134,10 @@ To setup the repository locally follow the steps mentioned below:
    bench new-site erpnext.localhost
    ```
 
-3. Get the ERPNext app and install it
+3. Get the LiwaERP app and install it
    ```
-   # Get the ERPNext app
-   bench get-app https://github.com/frappe/erpnext
+   # Get the LiwaERP app
+   bench get-app https://github.com/Ammarplays/LiwaERP
 
    # Install the app
    bench --site erpnext.localhost install-app erpnext
@@ -147,9 +147,9 @@ To setup the repository locally follow the steps mentioned below:
 
 ## Learning and Community
 
-1. [Frappe School](https://school.frappe.io) - Learn Frappe Framework and ERPNext from the various courses by the maintainers or from the community.
-2. [Official documentation](https://docs.erpnext.com/) - Extensive documentation for ERPNext.
-3. [Discussion Forum](https://discuss.frappe.io/c/erpnext/6) - Engage with the community of ERPNext users and service providers.
+1. [Frappe School](https://school.frappe.io) - Learn Frappe Framework and LiwaERP from the various courses by the maintainers or from the community.
+2. [Official documentation](https://docs.erpnext.com/) - Extensive documentation for LiwaERP.
+3. [Discussion Forum](https://discuss.frappe.io/c/erpnext/6) - Engage with the community of LiwaERP users and service providers.
 4. [Telegram Group](https://erpnext_public.t.me) - Get instant help from huge community of users.
 
 

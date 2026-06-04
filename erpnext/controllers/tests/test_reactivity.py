@@ -2,10 +2,10 @@ import frappe
 from frappe import qb
 from frappe.utils import today
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestReactivity(ERPNextTestSuite):
+class TestReactivity(LiwaERPTestSuite):
 	def test_01_basic_item_details(self):
 		# set Item Price
 		frappe.get_doc(

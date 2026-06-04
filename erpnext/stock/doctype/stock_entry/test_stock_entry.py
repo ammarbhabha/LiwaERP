@@ -36,7 +36,7 @@ from erpnext.stock.doctype.stock_reconciliation.test_stock_reconciliation import
 	create_stock_reconciliation,
 )
 from erpnext.stock.stock_ledger import NegativeStockError, get_previous_sle
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def get_sle(**args):
@@ -55,7 +55,7 @@ def get_sle(**args):
 	)
 
 
-class TestStockEntry(ERPNextTestSuite):
+class TestStockEntry(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("Stock Entry")
 		frappe.local.flags.dont_execute_stock_reposts = False
@@ -866,7 +866,7 @@ class TestStockEntry(ERPNextTestSuite):
 		fg_cost = next(filter(lambda x: x.item_code == "_Test FG Item 2", stock_entry.get("items"))).amount
 		self.assertEqual(fg_cost, flt(rm_cost + bom_operation_cost + work_order.additional_operating_cost, 2))
 
-	@ERPNextTestSuite.change_settings("Manufacturing Settings", {"material_consumption": 1})
+	@LiwaERPTestSuite.change_settings("Manufacturing Settings", {"material_consumption": 1})
 	def test_work_order_manufacture_with_material_consumption(self):
 		from erpnext.manufacturing.doctype.work_order.mapper import (
 			make_stock_entry as _make_stock_entry,
@@ -1302,7 +1302,7 @@ class TestStockEntry(ERPNextTestSuite):
 		self.assertEqual(se.items[0].expense_account, "_Test Account Cost for Goods Sold - _TC")
 		self.assertEqual(se.items[1].expense_account, "_Test Account Cost for Goods Sold - _TC")
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_future_negative_sle(self):
 		# Initialize item, batch, warehouse, opening qty
 		item_code = "_Test Future Neg Item"
@@ -1345,7 +1345,7 @@ class TestStockEntry(ERPNextTestSuite):
 
 		self.assertRaises(NegativeStockError, create_stock_entries, sequence_of_entries)
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_future_negative_sle_batch(self):
 		from erpnext.stock.doctype.batch.test_batch import TestBatch
 
@@ -1473,7 +1473,7 @@ class TestStockEntry(ERPNextTestSuite):
 		self.assertEqual(se.items[0].item_name, item.item_name)
 		self.assertEqual(se.items[0].stock_uom, item.stock_uom)
 
-	@ERPNextTestSuite.change_settings("Stock Reposting Settings", {"item_based_reposting": 0})
+	@LiwaERPTestSuite.change_settings("Stock Reposting Settings", {"item_based_reposting": 0})
 	def test_reposting_for_depedent_warehouse(self):
 		from erpnext.stock.doctype.repost_item_valuation.repost_item_valuation import repost_sl_entries
 		from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
@@ -2335,7 +2335,7 @@ class TestStockEntry(ERPNextTestSuite):
 		se.save()
 		se.submit()
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings", {"sample_retention_warehouse": "_Test Warehouse 1 - _TC"}
 	)
 	def test_sample_retention_stock_entry(self):
@@ -2377,7 +2377,7 @@ class TestStockEntry(ERPNextTestSuite):
 		self.assertEqual(target_sabb.entries[0].batch_no, batch)
 		self.assertEqual([entry.serial_no for entry in target_sabb.entries], serial_nos[:2])
 
-	@ERPNextTestSuite.change_settings("Manufacturing Settings", {"material_consumption": 0})
+	@LiwaERPTestSuite.change_settings("Manufacturing Settings", {"material_consumption": 0})
 	def test_raw_material_missing_validation(self):
 		stock_entry = make_stock_entry(
 			item_code="_Test Item",
@@ -2395,7 +2395,7 @@ class TestStockEntry(ERPNextTestSuite):
 			stock_entry.save,
 		)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Manufacturing Settings",
 		{
 			"material_consumption": 1,
@@ -2503,7 +2503,7 @@ class TestStockEntry(ERPNextTestSuite):
 		self.assertEqual(se.items[2].amount, 5)
 
 
-class TestStockEntryCoverage(ERPNextTestSuite):
+class TestStockEntryCoverage(LiwaERPTestSuite):
 	"""Tests for functions previously lacking dedicated coverage."""
 
 	# ── ceil_qty_if_uom_has_whole_number ──────────────────────────────────────
@@ -2651,7 +2651,7 @@ class TestStockEntryCoverage(ERPNextTestSuite):
 
 	# ── validate_sample_quantity ───────────────────────────────────────────────
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings", {"sample_retention_warehouse": "_Test Warehouse 1 - _TC"}
 	)
 	def test_validate_sample_quantity_raises_when_sample_exceeds_received_qty(self):
@@ -2772,7 +2772,7 @@ class TestStockEntryCoverage(ERPNextTestSuite):
 		se.purpose = "Manufacture"
 		se.validate_job_card_item()  # must not raise even with a job card set
 
-	@ERPNextTestSuite.change_settings("Manufacturing Settings", {"job_card_excess_transfer": 0})
+	@LiwaERPTestSuite.change_settings("Manufacturing Settings", {"job_card_excess_transfer": 0})
 	def test_validate_job_card_item_throws_when_job_card_item_ref_missing(self):
 		jc_name = frappe.db.get_value("Job Card", {"docstatus": 1})
 		if not jc_name:
@@ -2886,8 +2886,8 @@ class TestStockEntryCoverage(ERPNextTestSuite):
 		if key in materials:
 			self.assertEqual(materials[key].qty, 0)
 
-	@ERPNextTestSuite.change_settings("Manufacturing Settings", {"make_serial_no_batch_from_work_order": 1})
-	@ERPNextTestSuite.change_settings("Global Defaults", {"default_company": "_Test Company"})
+	@LiwaERPTestSuite.change_settings("Manufacturing Settings", {"make_serial_no_batch_from_work_order": 1})
+	@LiwaERPTestSuite.change_settings("Global Defaults", {"default_company": "_Test Company"})
 	def test_validate_fg_resets_invalid_serial_no_on_manufacture(self):
 		from erpnext.manufacturing.doctype.bom.test_bom import create_nested_bom
 		from erpnext.manufacturing.doctype.work_order.mapper import (
@@ -2926,8 +2926,8 @@ class TestStockEntryCoverage(ERPNextTestSuite):
 				for sn in get_serial_nos_from_bundle(row.serial_and_batch_bundle):
 					self.assertIn(sn, wo1_serial_nos)
 
-	@ERPNextTestSuite.change_settings("Manufacturing Settings", {"make_serial_no_batch_from_work_order": 1})
-	@ERPNextTestSuite.change_settings("Global Defaults", {"default_company": "_Test Company"})
+	@LiwaERPTestSuite.change_settings("Manufacturing Settings", {"make_serial_no_batch_from_work_order": 1})
+	@LiwaERPTestSuite.change_settings("Global Defaults", {"default_company": "_Test Company"})
 	def test_validate_fg_resets_invalid_batch_no_on_manufacture(self):
 		from erpnext.manufacturing.doctype.bom.test_bom import create_nested_bom
 		from erpnext.manufacturing.doctype.work_order.mapper import (

@@ -9,10 +9,10 @@ from erpnext.accounts.doctype.process_period_closing_voucher.process_period_clos
 	process_individual_date,
 )
 from erpnext.accounts.utils import get_fiscal_year
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestProcessPeriodClosingVoucher(ERPNextTestSuite):
+class TestProcessPeriodClosingVoucher(LiwaERPTestSuite):
 	def setUp(self):
 		frappe.db.set_single_value("Accounts Settings", "use_legacy_controller_for_pcv", 0)
 		self.company = "_Test Company"

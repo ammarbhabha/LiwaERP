@@ -37,10 +37,10 @@ from erpnext.stock.doctype.purchase_receipt.mapper import (
 	make_purchase_invoice as make_invoice,
 )
 from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class AssetSetup(ERPNextTestSuite):
+class AssetSetup(LiwaERPTestSuite):
 	def setUp(self):
 		set_depreciation_settings_in_company()
 		enable_cwip_accounting("Computers")

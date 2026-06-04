@@ -4,10 +4,10 @@
 import frappe
 from frappe.utils import add_days, nowdate
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestContract(ERPNextTestSuite):
+class TestContract(LiwaERPTestSuite):
 	def setUp(self):
 		self.contract_doc = get_contract()
 

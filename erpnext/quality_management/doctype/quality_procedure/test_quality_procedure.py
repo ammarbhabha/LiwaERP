@@ -3,12 +3,12 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 from .quality_procedure import add_node
 
 
-class TestQualityProcedure(ERPNextTestSuite):
+class TestQualityProcedure(LiwaERPTestSuite):
 	def test_add_node(self):
 		procedure = create_procedure(
 			{

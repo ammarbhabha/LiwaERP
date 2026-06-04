@@ -9,10 +9,10 @@ from erpnext.selling.report.payment_terms_status_for_sales_order.payment_terms_s
 	execute,
 )
 from erpnext.stock.doctype.item.test_item import create_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPaymentTermsStatusForSalesOrder(ERPNextTestSuite):
+class TestPaymentTermsStatusForSalesOrder(LiwaERPTestSuite):
 	def create_payment_terms_template(self):
 		# create template for 50-50 payments
 		template = None
@@ -134,7 +134,7 @@ class TestPaymentTermsStatusForSalesOrder(ERPNextTestSuite):
 			)
 			doc.insert()
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings", allow_multi_currency_invoices_against_single_party_account=1
 	)
 	def test_02_alternate_currency(self):

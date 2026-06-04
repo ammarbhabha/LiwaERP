@@ -3,8 +3,8 @@
 
 # import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAccountClosingBalance(ERPNextTestSuite):
+class TestAccountClosingBalance(LiwaERPTestSuite):
 	pass

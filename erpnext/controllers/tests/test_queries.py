@@ -6,14 +6,14 @@ from frappe.core.doctype.user_permission.user_permission import add_user_permiss
 from frappe.custom.doctype.property_setter.property_setter import make_property_setter
 
 from erpnext.controllers import queries
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def add_default_params(func, doctype):
 	return partial(func, doctype=doctype, txt="", searchfield="name", start=0, page_len=20, filters=None)
 
 
-class TestQueries(ERPNextTestSuite):
+class TestQueries(LiwaERPTestSuite):
 	def assert_nested_in(self, item, container):
 		self.assertIn(item, [vals for tuples in container for vals in tuples])
 
@@ -108,7 +108,7 @@ class TestQueries(ERPNextTestSuite):
 			}
 		)
 
-		with ERPNextTestSuite.set_user(self, user.name):
+		with LiwaERPTestSuite.set_user(self, user.name):
 			params = {
 				"doctype": "Employee",
 				"txt": "",

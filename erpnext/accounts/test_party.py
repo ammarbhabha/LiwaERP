@@ -1,10 +1,10 @@
 import frappe
 
 from erpnext.accounts.party import get_default_price_list
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class PartyTestCase(ERPNextTestSuite):
+class PartyTestCase(LiwaERPTestSuite):
 	def test_get_default_price_list_should_return_none_for_invalid_group(self):
 		customer = frappe.get_doc(
 			{

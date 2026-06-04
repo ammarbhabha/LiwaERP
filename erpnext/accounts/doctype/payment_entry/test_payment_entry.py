@@ -23,10 +23,10 @@ from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import (
 )
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
 from erpnext.setup.doctype.employee.test_employee import make_employee
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPaymentEntry(ERPNextTestSuite):
+class TestPaymentEntry(LiwaERPTestSuite):
 	def get_journals_for(self, voucher_type: str, voucher_no: str) -> list:
 		journals = []
 		if voucher_type and voucher_no:
@@ -446,7 +446,7 @@ class TestPaymentEntry(ERPNextTestSuite):
 		self.assertEqual(si.payment_schedule[0].outstanding, 0)
 		self.assertEqual(si.payment_schedule[0].discounted_amount, 50)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{
 			"allow_multi_currency_invoices_against_single_party_account": 1,
@@ -1179,7 +1179,7 @@ class TestPaymentEntry(ERPNextTestSuite):
 		}
 		self.assertDictEqual(ref_details, expected_response)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{
 			"unlink_payment_on_cancellation_of_invoice": 1,
@@ -1274,7 +1274,7 @@ class TestPaymentEntry(ERPNextTestSuite):
 		si3.cancel()
 		si3.delete()
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{
 			"unlink_payment_on_cancellation_of_invoice": 1,
@@ -1970,7 +1970,7 @@ class TestPaymentEntry(ERPNextTestSuite):
 		# 'Is Opening' should always be 'No' for normal advance payments
 		self.assertEqual(gl_with_opening_set, [])
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": 1})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": 1})
 	def test_delete_linked_exchange_gain_loss_journal(self):
 		from erpnext.accounts.doctype.account.test_account import create_account
 		from erpnext.accounts.doctype.opening_invoice_creation_tool.test_opening_invoice_creation_tool import (

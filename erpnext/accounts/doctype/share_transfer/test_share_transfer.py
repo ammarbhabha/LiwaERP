@@ -4,10 +4,10 @@
 import frappe
 
 from erpnext.accounts.doctype.share_transfer.share_transfer import ShareDontExists
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestShareTransfer(ERPNextTestSuite):
+class TestShareTransfer(LiwaERPTestSuite):
 	def setUp(self):
 		share_transfers = [
 			{

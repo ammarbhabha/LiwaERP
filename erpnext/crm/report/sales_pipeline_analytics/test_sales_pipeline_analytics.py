@@ -1,10 +1,10 @@
 import frappe
 
 from erpnext.crm.report.sales_pipeline_analytics.sales_pipeline_analytics import execute
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSalesPipelineAnalytics(ERPNextTestSuite):
+class TestSalesPipelineAnalytics(LiwaERPTestSuite):
 	def setUp(self):
 		create_opportunity()
 

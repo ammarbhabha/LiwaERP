@@ -26,10 +26,10 @@ from erpnext.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle 
 	make_serial_batch_bundle,
 )
 from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPurchaseReceipt(ERPNextTestSuite):
+class TestPurchaseReceipt(LiwaERPTestSuite):
 	def setUp(self):
 		frappe.local.future_sle = {}
 		self.load_test_records("Purchase Receipt")
@@ -1430,7 +1430,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 
 		self.assertEqual(discrepancy_caused_by_exchange_rate_diff, amount)
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"automatically_fetch_payment_terms": 1})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"automatically_fetch_payment_terms": 1})
 	def test_payment_terms_are_fetched_when_creating_purchase_invoice(self):
 		from erpnext.accounts.doctype.payment_entry.test_payment_entry import (
 			create_payment_terms_template,
@@ -1461,7 +1461,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 		# self.assertEqual(po.payment_terms_template, pi.payment_terms_template)
 		compare_payment_schedules(self, po, pi)
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 1})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 1})
 	def test_neg_to_positive(self):
 		from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 
@@ -4581,7 +4581,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 
 		frappe.db.set_single_value("Buying Settings", "set_valuation_rate_for_rejected_materials", 0)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Buying Settings",
 		{"bill_for_rejected_quantity_in_purchase_invoice": 1, "set_valuation_rate_for_rejected_materials": 1},
 	)
@@ -4939,7 +4939,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 
 		self.assertEqual(sles, [1500.0, 1500.0])
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_multiple_transactions_with_same_posting_datetime(self):
 		from erpnext.stock.doctype.delivery_note.test_delivery_note import create_delivery_note
 		from erpnext.stock.stock_ledger import NegativeStockError
@@ -4974,7 +4974,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 
 		self.assertRaises(NegativeStockError, pr.cancel)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Buying Settings",
 		{
 			"set_landed_cost_based_on_purchase_invoice_rate": 1,
@@ -4982,7 +4982,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 			"allow_multiple_items": 1,
 		},
 	)
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"over_billing_allowance": 100})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"over_billing_allowance": 100})
 	def test_set_lcv_from_pi_created_against_po(self):
 		from erpnext.buying.doctype.purchase_order.mapper import (
 			make_purchase_invoice as make_pi_against_po,
@@ -5638,7 +5638,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 		self.assertIn(company.default_inventory_account, gl_accounts)
 		pr.cancel()
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Buying Settings", {"set_landed_cost_based_on_purchase_invoice_rate": 1, "maintain_same_rate": 0}
 	)
 	def test_srbnb_with_inclusive_tax_and_rate_change_in_pi(self):
@@ -5702,7 +5702,7 @@ class TestPurchaseReceipt(ERPNextTestSuite):
 		srbnb_credit = sum(flt(row.credit) for row in gl_entries if row.account == srbnb_account)
 		self.assertAlmostEqual(srbnb_credit, pi_base_net_amount, places=2)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Buying Settings", {"set_landed_cost_based_on_purchase_invoice_rate": 1, "maintain_same_rate": 0}
 	)
 	def test_srbnb_with_inclusive_tax_and_exchange_rate_change_in_pi(self):

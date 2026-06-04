@@ -26,7 +26,7 @@ from erpnext.stock.doctype.item.item import (
 )
 from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 from erpnext.stock.get_item_details import ItemDetailsCtx, get_item_details
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def make_item(item_code=None, properties=None, uoms=None, barcode=None):
@@ -71,7 +71,7 @@ def make_item(item_code=None, properties=None, uoms=None, barcode=None):
 	return item
 
 
-class TestItem(ERPNextTestSuite):
+class TestItem(LiwaERPTestSuite):
 	def setUp(self):
 		super().setUp()
 		frappe.flags.attribute_values = None
@@ -746,13 +746,13 @@ class TestItem(ERPNextTestSuite):
 		except frappe.ValidationError as e:
 			self.fail(f"stock item considered non-stock item: {e}")
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"item_naming_by": "Naming Series"})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"item_naming_by": "Naming Series"})
 	def test_autoname_series(self):
 		item = frappe.new_doc("Item")
 		item.item_group = "All Item Groups"
 		item.save()  # if item code saved without item_code then series worked
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_item_wise_negative_stock(self):
 		"""When global settings are disabled check that item that allows
 		negative stock can still consume material in all known stock
@@ -764,7 +764,7 @@ class TestItem(ERPNextTestSuite):
 
 		self.consume_item_code_with_differet_stock_transactions(item_code=item.name)
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_backdated_negative_stock(self):
 		"""same as test above but backdated entries"""
 		from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
@@ -777,7 +777,7 @@ class TestItem(ERPNextTestSuite):
 		)
 		self.consume_item_code_with_differet_stock_transactions(item_code=item.name)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings", {"sample_retention_warehouse": "_Test Warehouse - _TC"}
 	)
 	def test_retain_sample(self):
@@ -963,7 +963,7 @@ class TestItem(ERPNextTestSuite):
 			msg="Different Variant UOM should not be allowed when `allow_different_uom` is disabled.",
 		)
 
-	@ERPNextTestSuite.change_settings("Global Defaults", {"default_company": "_Test Company"})
+	@LiwaERPTestSuite.change_settings("Global Defaults", {"default_company": "_Test Company"})
 	def test_opening_stock_for_serial_batch(self):
 		items = {
 			"Test Opening Stock for Serial No": {

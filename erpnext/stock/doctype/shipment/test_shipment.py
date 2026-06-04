@@ -6,10 +6,10 @@ from datetime import date, timedelta
 import frappe
 
 from erpnext.stock.doctype.delivery_note.mapper import make_shipment
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestShipment(ERPNextTestSuite):
+class TestShipment(LiwaERPTestSuite):
 	def test_shipment_from_delivery_note(self):
 		delivery_note = create_test_delivery_note()
 		delivery_note.submit()

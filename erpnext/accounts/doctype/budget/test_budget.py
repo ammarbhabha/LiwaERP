@@ -13,10 +13,10 @@ from erpnext.accounts.doctype.budget.budget import (
 from erpnext.accounts.doctype.journal_entry.test_journal_entry import make_journal_entry
 from erpnext.accounts.utils import get_fiscal_year
 from erpnext.buying.doctype.purchase_order.test_purchase_order import create_purchase_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBudget(ERPNextTestSuite):
+class TestBudget(LiwaERPTestSuite):
 	def setUp(self):
 		frappe.db.set_single_value("Accounts Settings", "use_legacy_budget_controller", False)
 		self.company = "_Test Company"

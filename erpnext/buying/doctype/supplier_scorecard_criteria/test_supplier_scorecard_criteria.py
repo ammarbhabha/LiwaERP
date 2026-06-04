@@ -4,10 +4,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSupplierScorecardCriteria(ERPNextTestSuite):
+class TestSupplierScorecardCriteria(LiwaERPTestSuite):
 	def test_variables_exist(self):
 		for d in test_good_criteria:
 			frappe.get_doc(d).insert()

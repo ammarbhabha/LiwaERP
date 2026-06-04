@@ -1,9 +1,9 @@
 # Copyright (c) 2018, Frappe and Contributors
 # See license.txt
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestQualityAction(ERPNextTestSuite):
+class TestQualityAction(LiwaERPTestSuite):
 	# quality action has no code
 	pass

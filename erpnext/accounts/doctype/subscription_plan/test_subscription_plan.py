@@ -1,8 +1,8 @@
 # Copyright (c) 2018, Frappe Technologies Pvt. Ltd. and Contributors
 # See license.txt
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSubscriptionPlan(ERPNextTestSuite):
+class TestSubscriptionPlan(LiwaERPTestSuite):
 	pass

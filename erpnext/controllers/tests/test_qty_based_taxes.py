@@ -2,14 +2,14 @@ from uuid import uuid4 as _uuid4
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def uuid4():
 	return str(_uuid4())
 
 
-class TestTaxes(ERPNextTestSuite):
+class TestTaxes(LiwaERPTestSuite):
 	def setUp(self):
 		self.company = frappe.get_doc(
 			{

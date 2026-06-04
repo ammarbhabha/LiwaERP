@@ -6,10 +6,10 @@ import frappe
 from erpnext.accounts.doctype.opening_invoice_creation_tool.opening_invoice_creation_tool import (
 	get_temporary_opening_account,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestOpeningInvoiceCreationTool(ERPNextTestSuite):
+class TestOpeningInvoiceCreationTool(LiwaERPTestSuite):
 	def make_invoices(
 		self,
 		invoice_type="Sales",

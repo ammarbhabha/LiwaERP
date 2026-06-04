@@ -21,10 +21,10 @@ from erpnext.accounts.doctype.bank_statement_import_log.bank_statement_import_lo
 	update_pdf_tables,
 )
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBankStatementImportLog(ERPNextTestSuite, AccountsTestMixin):
+class TestBankStatementImportLog(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		self.create_company()
 		self.create_customer()

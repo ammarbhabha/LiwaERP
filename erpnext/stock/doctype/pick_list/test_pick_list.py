@@ -24,10 +24,10 @@ from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 from erpnext.stock.doctype.stock_reconciliation.stock_reconciliation import (
 	EmptyStockReconciliationItemsError,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPickList(ERPNextTestSuite):
+class TestPickList(LiwaERPTestSuite):
 	def test_pick_list_picks_warehouse_for_each_item(self):
 		item_code = make_item().name
 		try:
@@ -524,7 +524,7 @@ class TestPickList(ERPNextTestSuite):
 		self.assertEqual(pick_list.locations[1].qty, 5)
 		self.assertEqual(pick_list.locations[1].sales_order_item, sales_order.items[0].name)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_pick_list_for_items_with_multiple_UOM(self):
 		item_code = make_item(
 			uoms=[
@@ -772,7 +772,7 @@ class TestPickList(ERPNextTestSuite):
 				if dn_item.item_code == "_Test Item 2":
 					self.assertEqual(dn_item.qty, 2)
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"use_serial_batch_fields": 1})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"use_serial_batch_fields": 1})
 	def test_sales_invoice_from_pick_list_copies_old_batch_serial_fields(self):
 		warehouse = "_Test Warehouse - _TC"
 		item = make_item(
@@ -810,7 +810,7 @@ class TestPickList(ERPNextTestSuite):
 			set(sales_invoice_item.serial_no.split("\n")), set(pick_list_item.serial_no.split("\n"))
 		)
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"use_serial_batch_fields": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"use_serial_batch_fields": 0})
 	def test_sales_invoice_from_pick_list_copies_serial_and_batch_bundle(self):
 		frappe.db.set_single_value("Stock Settings", "use_serial_batch_fields", 0)
 
@@ -1629,7 +1629,7 @@ class TestPickList(ERPNextTestSuite):
 
 		frappe.db.set_single_value("Stock Settings", "over_picking_allowance", 0)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_ignore_pricing_rule_in_pick_list(self):
 		frappe.flags.print_stmt = False
 		warehouse = "_Test Warehouse - _TC"
@@ -1731,7 +1731,7 @@ class TestPickList(ERPNextTestSuite):
 		for loc in pl.locations:
 			self.assertEqual(loc.batch_no, batch2)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_multiple_pick_lists_delivery_note(self):
 		from erpnext.stock.doctype.pick_list.mapper import create_dn_for_pick_lists
 
@@ -1818,7 +1818,7 @@ class TestPickList(ERPNextTestSuite):
 		stock_entry_2.cancel()
 		stock_entry_3.cancel()
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_packed_item_multiple_times_in_so(self):
 		frappe.db.delete("Item Price")
 		warehouse_1 = "_Test Warehouse - _TC"

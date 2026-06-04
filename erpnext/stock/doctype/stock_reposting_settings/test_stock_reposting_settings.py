@@ -4,10 +4,10 @@
 import frappe
 
 from erpnext.stock.doctype.repost_item_valuation.repost_item_valuation import get_recipients
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestStockRepostingSettings(ERPNextTestSuite):
+class TestStockRepostingSettings(LiwaERPTestSuite):
 	def test_notify_reposting_error_to_role(self):
 		role = "Notify Reposting Role"
 

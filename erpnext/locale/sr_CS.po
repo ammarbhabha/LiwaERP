@@ -952,7 +952,7 @@ msgstr "<span class=\"h4\"><b>Izveštaji &amp; Master</b></span>"
 msgid "<span class=\"h4\"><b>Subcontracting Inward and Outward</b></span>"
 msgstr "<span class=\"h4\"><b>Izdavanje i prijem iz podugovaranja</b></span>"
 
-#. Header text in the ERPNext Settings Workspace
+#. Header text in the LiwaERP Settings Workspace
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 msgid "<span class=\"h4\"><b>Your Shortcuts\n"
 "\t\t\t\n"
@@ -2199,7 +2199,7 @@ msgstr "Račun potraživanja od kupaca/dugovanja ka dobavljačima"
 
 #. Name of a DocType
 #. Label of a Link in the Invoicing Workspace
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #: erpnext/accounts/workspace/invoicing/invoicing.json
@@ -9023,7 +9023,7 @@ msgstr "Kurs nabavke"
 
 #. Name of a DocType
 #. Label of a Link in the Buying Workspace
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 #: erpnext/buying/workspace/buying/buying.json
@@ -11402,7 +11402,7 @@ msgid "Company Abbreviation"
 msgstr "Skraćenica kompanije"
 
 #: erpnext/public/js/utils/naming_series.js:101
-msgid "Company Abbreviation (requires ERPNext to be installed)"
+msgid "Company Abbreviation (requires LiwaERP to be installed)"
 msgstr ""
 
 #: erpnext/public/js/setup_wizard.js:174
@@ -16161,7 +16161,7 @@ msgstr "Obriši transakcije"
 msgid "Delete all the Transactions for this Company"
 msgstr "Obriši sve transakcije za ovu kompaniju"
 
-#. Label of a Link in the ERPNext Settings Workspace
+#. Label of a Link in the LiwaERP Settings Workspace
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 msgid "Deleted Documents"
 msgstr "Obrisani dokumenti"
@@ -18216,8 +18216,8 @@ msgstr "Elektromagnetna jedinica struje"
 
 #. Label of a Desktop Icon
 #: erpnext/desktop_icon/erpnext.json
-msgid "ERPNext"
-msgstr "ERPNext"
+msgid "LiwaERP"
+msgstr "LiwaERP"
 
 #. Label of a Desktop Icon
 #. Name of a Workspace
@@ -18225,17 +18225,17 @@ msgstr "ERPNext"
 #: erpnext/desktop_icon/erpnext_settings.json
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 #: erpnext/workspace_sidebar/erpnext_settings.json
-msgid "ERPNext Settings"
-msgstr "ERPNext podešavanja"
+msgid "LiwaERP Settings"
+msgstr "LiwaERP podešavanja"
 
 #. Label of the user_id (Data) field in DocType 'Employee Group Table'
 #: erpnext/setup/doctype/employee_group_table/employee_group_table.json
-msgid "ERPNext User ID"
-msgstr "ERPNext ID korisnika"
+msgid "LiwaERP User ID"
+msgstr "LiwaERP ID korisnika"
 
 #. Description of the 'Maintain Stock' (Check) field in DocType 'Item'
 #: erpnext/stock/doctype/item/item.json
-msgid "ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items."
+msgid "LiwaERP will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items."
 msgstr ""
 
 #. Option for the 'How often should project be updated of Total Purchase Cost
@@ -20700,7 +20700,7 @@ msgid "Fiscal Year"
 msgstr "Fiskalna godina"
 
 #: erpnext/public/js/utils/naming_series.js:100
-msgid "Fiscal Year (requires ERPNext to be installed)"
+msgid "Fiscal Year (requires LiwaERP to be installed)"
 msgstr ""
 
 #. Name of a DocType
@@ -22181,7 +22181,7 @@ msgid "Give free item for every N quantity"
 msgstr "Dodeli besplatnu stavku za svaku N količinu"
 
 #. Name of a DocType
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/setup/doctype/global_defaults/global_defaults.json
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
@@ -23581,12 +23581,12 @@ msgid "If this item has variants, then it cannot be selected in sales orders etc
 msgstr "Ukoliko ova stavka ima varijante, ne može biti izabrana u prodajnim porudžbinama itd."
 
 #: erpnext/buying/doctype/buying_settings/buying_settings.js:76
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
-msgstr "Ukoliko je ova opcija postavljena na 'Da', ERPNext neće dozvoliti kreiranje ulazne fakture bez prethodnog kreiranja nabavne porudžbine. Ova konfiguracija se može zaobići omogućavanjem opcije 'Dozvoli kreiranje ulazne fakture bez nabavne porudžbine' u šifarniku dobavljača."
+msgid "If this option is configured 'Yes', LiwaERP will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
+msgstr "Ukoliko je ova opcija postavljena na 'Da', LiwaERP neće dozvoliti kreiranje ulazne fakture bez prethodnog kreiranja nabavne porudžbine. Ova konfiguracija se može zaobići omogućavanjem opcije 'Dozvoli kreiranje ulazne fakture bez nabavne porudžbine' u šifarniku dobavljača."
 
 #: erpnext/buying/doctype/buying_settings/buying_settings.js:83
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
-msgstr "Ukoliko je ova opcija postavljena na 'Da', ERPNext neće dozvoliti ulazne fakture bez prethodnog kreiranja prijemnica nabavke. Ova konfiguracija se može zaobići omogućavanjem opcije 'Dozvoli kreiranje ulazne fakture bez prijemnice nabavke' u šifarniku dobavljača."
+msgid "If this option is configured 'Yes', LiwaERP will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
+msgstr "Ukoliko je ova opcija postavljena na 'Da', LiwaERP neće dozvoliti ulazne fakture bez prethodnog kreiranja prijemnica nabavke. Ova konfiguracija se može zaobići omogućavanjem opcije 'Dozvoli kreiranje ulazne fakture bez prijemnice nabavke' u šifarniku dobavljača."
 
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.js:10
 msgid "If ticked, multiple materials can be used for a single Work Order. This is useful if one or more time consuming products are being manufactured."
@@ -23611,8 +23611,8 @@ msgid "If yes, then this warehouse will be used to store rejected materials"
 msgstr "Ukoliko je odgovor da, ovo skladište će se koristiti za čuvanje odbijenog materijala"
 
 #: erpnext/stock/doctype/item/item.js:1142
-msgid "If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item."
-msgstr "Ukoliko vodite zalihe ove stavke u svom inventaru, ERPNext će napraviti unos u knjigu zaliha za svaku transakciju ove stavke."
+msgid "If you are maintaining stock of this Item in your Inventory, LiwaERP will make a stock ledger entry for each transaction of this item."
+msgstr "Ukoliko vodite zalihe ove stavke u svom inventaru, LiwaERP će napraviti unos u knjigu zaliha za svaku transakciju ove stavke."
 
 #. Description of the 'Unreconciled Entries' (Section Break) field in DocType
 #. 'Payment Reconciliation'
@@ -23820,7 +23820,7 @@ msgstr ""
 msgid "Import Chart of Accounts from a csv file"
 msgstr "Uvezi kontni okvir iz CSV datoteke"
 
-#. Label of a Link in the ERPNext Settings Workspace
+#. Label of a Link in the LiwaERP Settings Workspace
 #. Label of a Link in the Home Workspace
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 #: erpnext/setup/workspace/home/home.json
@@ -48435,7 +48435,7 @@ msgstr "Prodajna cena"
 
 #. Name of a DocType
 #. Label of a Link in the Selling Workspace
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 #: erpnext/selling/workspace/selling/selling.json
@@ -51590,7 +51590,7 @@ msgstr "Rezervisana količina zaliha (u jedinici mere zaliha)"
 
 #. Label of the auto_accounting_for_stock_settings (Section Break) field in
 #. DocType 'Company'
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Name of a DocType
 #. Label of a Link in the Stock Workspace
 #. Label of a Workspace Sidebar Item
@@ -55147,8 +55147,8 @@ msgid "This action will stop future billing. Are you sure you want to cancel thi
 msgstr "Ova radnja će zaustaviti buduće naplate. Da li ste sigurni da želite da otkažete ovu pretplatu?"
 
 #: erpnext/accounts/doctype/bank_account/bank_account.js:35
-msgid "This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?"
-msgstr "Ova radnja će poništiti povezivanje računa od bilo koje eskterne usluge koja povezuje ERPNext sa Vašim tekućim računom. Ova radnja se ne može povratiti. Da li ste sigurni?"
+msgid "This action will unlink this account from any external service integrating LiwaERP with your bank accounts. It cannot be undone. Are you certain ?"
+msgstr "Ova radnja će poništiti povezivanje računa od bilo koje eskterne usluge koja povezuje LiwaERP sa Vašim tekućim računom. Ova radnja se ne može povratiti. Da li ste sigurni?"
 
 #. Description of the 'Allow Sales Order creation for expired Quotation'
 #. (Check) field in DocType 'Selling Settings'
@@ -59673,8 +59673,8 @@ msgid "Vouchers"
 msgstr "Dokumenta"
 
 #: erpnext/patches/v15_0/remove_exotel_integration.py:32
-msgid "WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration."
-msgstr "UPOZORENJE: Exotel aplikacija je odvojena od ERPNext-a. Molimo Vas da instalirate aplikaciju da biste nastavili sa korišćenjem Exotel integracije."
+msgid "WARNING: Exotel app has been separated from LiwaERP, please install the app to continue using Exotel integration."
+msgstr "UPOZORENJE: Exotel aplikacija je odvojena od LiwaERP-a. Molimo Vas da instalirate aplikaciju da biste nastavili sa korišćenjem Exotel integracije."
 
 #. Label of the wip_composite_asset (Link) field in DocType 'Purchase Invoice
 #. Item'
@@ -61245,8 +61245,8 @@ msgid "Zip File"
 msgstr "ZIP fajl"
 
 #: erpnext/stock/reorder_item.py:373
-msgid "[Important] [ERPNext] Auto Reorder Errors"
-msgstr "[Important] [ERPNext] Greške automatskog ponovnog naručivanja"
+msgid "[Important] [LiwaERP] Auto Reorder Errors"
+msgstr "[Important] [LiwaERP] Greške automatskog ponovnog naručivanja"
 
 #: erpnext/controllers/status_updater.py:304
 msgid "`Allow Negative rates for Items`"

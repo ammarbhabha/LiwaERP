@@ -26,10 +26,10 @@ from erpnext.stock.doctype.stock_reconciliation.test_stock_reconciliation import
 )
 from erpnext.stock.stock_ledger import get_previous_sle
 from erpnext.stock.tests.test_utils import StockTestMixin
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestStockLedgerEntry(ERPNextTestSuite, StockTestMixin):
+class TestStockLedgerEntry(LiwaERPTestSuite, StockTestMixin):
 	def setUp(self):
 		create_items()
 		reset("Stock Entry")
@@ -1242,7 +1242,7 @@ class TestStockLedgerEntry(ERPNextTestSuite, StockTestMixin):
 		self.assertEqual(sle[0].qty_after_transaction, 105)
 		self.assertEqual(sle[0].actual_qty, 100)
 
-	@ERPNextTestSuite.change_settings("System Settings", {"float_precision": 3, "currency_precision": 2})
+	@LiwaERPTestSuite.change_settings("System Settings", {"float_precision": 3, "currency_precision": 2})
 	def test_transfer_invariants(self):
 		"""Extact stock value should be transferred."""
 
@@ -1281,7 +1281,7 @@ class TestStockLedgerEntry(ERPNextTestSuite, StockTestMixin):
 		)
 		self.assertEqual(abs(sles[0].stock_value_difference), sles[1].stock_value_difference)
 
-	@ERPNextTestSuite.change_settings("System Settings", {"float_precision": 4})
+	@LiwaERPTestSuite.change_settings("System Settings", {"float_precision": 4})
 	def test_negative_qty_with_precision(self):
 		"Test if system precision is respected while validating negative qty."
 		from erpnext.stock.doctype.item.test_item import create_item
@@ -1321,7 +1321,7 @@ class TestStockLedgerEntry(ERPNextTestSuite, StockTestMixin):
 
 		self.assertEqual(flt(get_stock_balance(item_code, warehouse), 3), 0.000)
 
-	@ERPNextTestSuite.change_settings("System Settings", {"float_precision": 4})
+	@LiwaERPTestSuite.change_settings("System Settings", {"float_precision": 4})
 	def test_future_negative_qty_with_precision(self):
 		"""
 		Ledger:

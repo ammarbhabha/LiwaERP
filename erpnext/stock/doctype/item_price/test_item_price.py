@@ -6,10 +6,10 @@ import frappe
 
 from erpnext.stock.doctype.item_price.item_price import ItemPriceDuplicateItem
 from erpnext.stock.get_item_details import ItemDetailsCtx, get_price_list_rate_for
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestItemPrice(ERPNextTestSuite):
+class TestItemPrice(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("Item Price")
 

@@ -4,10 +4,10 @@
 import frappe
 
 from erpnext.regional.report.irs_1099.irs_1099 import execute as execute_1099_report
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestUnitedStates(ERPNextTestSuite):
+class TestUnitedStates(LiwaERPTestSuite):
 	def test_irs_1099_custom_field(self):
 		if not frappe.db.exists("Supplier", "_US 1099 Test Supplier"):
 			make_irs_1099_supplier()

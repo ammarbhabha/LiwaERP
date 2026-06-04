@@ -4,10 +4,10 @@
 import frappe
 
 from erpnext.accounts.doctype.journal_entry.test_journal_entry import make_journal_entry
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestFinanceBook(ERPNextTestSuite):
+class TestFinanceBook(LiwaERPTestSuite):
 	def test_finance_book(self):
 		finance_book = create_finance_book()
 

@@ -4,10 +4,10 @@
 import frappe
 from frappe.utils import random_string
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestVehicle(ERPNextTestSuite):
+class TestVehicle(LiwaERPTestSuite):
 	def test_make_vehicle(self):
 		vehicle = frappe.get_doc(
 			{

@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestQualityFeedback(ERPNextTestSuite):
+class TestQualityFeedback(LiwaERPTestSuite):
 	def test_quality_feedback(self):
 		template = frappe.get_doc(
 			doctype="Quality Feedback Template",

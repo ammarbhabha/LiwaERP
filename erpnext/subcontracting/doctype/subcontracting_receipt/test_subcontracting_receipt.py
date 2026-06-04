@@ -39,10 +39,10 @@ from erpnext.subcontracting.doctype.subcontracting_order.subcontracting_order im
 from erpnext.subcontracting.doctype.subcontracting_receipt.subcontracting_receipt import (
 	BOMQuantityError,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSubcontractingReceipt(ERPNextTestSuite):
+class TestSubcontractingReceipt(LiwaERPTestSuite):
 	def setUp(self):
 		make_subcontracted_items()
 		make_raw_materials()
@@ -496,7 +496,7 @@ class TestSubcontractingReceipt(ERPNextTestSuite):
 			self.assertEqual(expected_values[gle.account][0], gle.debit)
 			self.assertEqual(expected_values[gle.account][1], gle.credit)
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"use_serial_batch_fields": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"use_serial_batch_fields": 0})
 	def test_subcontracting_receipt_with_zero_service_cost(self):
 		warehouse = "Stores - TCP1"
 		service_items = [
@@ -617,7 +617,7 @@ class TestSubcontractingReceipt(ERPNextTestSuite):
 		for item in scr.supplied_items:
 			self.assertFalse(item.available_qty_for_consumption)
 
-	@ERPNextTestSuite.change_settings("Buying Settings", {"allow_multiple_items": True})
+	@LiwaERPTestSuite.change_settings("Buying Settings", {"allow_multiple_items": True})
 	def test_supplied_items_consumed_qty_for_similar_finished_goods(self):
 		"""
 		Test that supplied raw material consumption is calculated correctly
@@ -1443,7 +1443,7 @@ class TestSubcontractingReceipt(ERPNextTestSuite):
 		sr.reload()
 		self.assertEqual(sr.items[0].rejected_qty, 2)  # Should remain the same
 
-	@ERPNextTestSuite.change_settings("Buying Settings", {"auto_create_purchase_receipt": 1})
+	@LiwaERPTestSuite.change_settings("Buying Settings", {"auto_create_purchase_receipt": 1})
 	def test_auto_create_purchase_receipt(self):
 		from erpnext.buying.doctype.purchase_order.test_purchase_order import create_purchase_order
 
@@ -1507,7 +1507,7 @@ class TestSubcontractingReceipt(ERPNextTestSuite):
 
 		self.assertEqual(pr_details[0]["total_taxes_and_charges"], 60)
 
-	@ERPNextTestSuite.change_settings("Buying Settings", {"auto_create_purchase_receipt": 1})
+	@LiwaERPTestSuite.change_settings("Buying Settings", {"auto_create_purchase_receipt": 1})
 	def test_auto_create_purchase_receipt_with_no_reference_of_po_item(self):
 		from erpnext.buying.doctype.purchase_order.test_purchase_order import create_purchase_order
 
@@ -2005,8 +2005,8 @@ class TestSubcontractingReceipt(ERPNextTestSuite):
 
 		self.assertRaises(BOMQuantityError, scr.submit)
 
-	@ERPNextTestSuite.change_settings("Buying Settings", {"over_transfer_allowance": 20})
-	@ERPNextTestSuite.change_settings("Stock Settings", {"over_delivery_receipt_allowance": 20})
+	@LiwaERPTestSuite.change_settings("Buying Settings", {"over_transfer_allowance": 20})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"over_delivery_receipt_allowance": 20})
 	def test_over_receipt(self):
 		from erpnext.controllers.subcontracting_controller import make_rm_stock_entry
 

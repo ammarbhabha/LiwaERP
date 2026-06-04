@@ -2,8 +2,8 @@
 # For license information, please see license.txt
 # import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestCurrencyExchangeSettings(ERPNextTestSuite):
+class TestCurrencyExchangeSettings(LiwaERPTestSuite):
 	pass

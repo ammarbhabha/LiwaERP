@@ -4,10 +4,10 @@
 import frappe
 
 from erpnext.setup.doctype.employee.test_employee import make_employee
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestEmployeeGroup(ERPNextTestSuite):
+class TestEmployeeGroup(LiwaERPTestSuite):
 	pass
 
 

@@ -10,10 +10,10 @@ from erpnext.stock.doctype.delivery_trip.delivery_trip import (
 	get_contact_and_address,
 	notify_customers,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestDeliveryTrip(ERPNextTestSuite):
+class TestDeliveryTrip(LiwaERPTestSuite):
 	def setUp(self):
 		super().setUp()
 		driver = create_driver()

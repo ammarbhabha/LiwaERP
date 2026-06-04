@@ -6,10 +6,10 @@ import frappe
 
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
 from erpnext.selling.report.sales_analytics.sales_analytics import execute
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAnalytics(ERPNextTestSuite):
+class TestAnalytics(LiwaERPTestSuite):
 	def test_sales_analytics(self):
 		create_sales_orders()
 

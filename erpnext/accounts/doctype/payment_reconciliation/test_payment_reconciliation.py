@@ -13,10 +13,10 @@ from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sal
 from erpnext.accounts.party import get_party_account
 from erpnext.accounts.utils import get_fiscal_year
 from erpnext.buying.doctype.purchase_order.test_purchase_order import create_purchase_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPaymentReconciliation(ERPNextTestSuite):
+class TestPaymentReconciliation(LiwaERPTestSuite):
 	def setUp(self):
 		self.company = "_Test Company"
 		self.debit_to = "Debtors - _TC"
@@ -1102,7 +1102,7 @@ class TestPaymentReconciliation(ERPNextTestSuite):
 		payment_vouchers = [x.get("reference_name") for x in pr.get("payments")]
 		self.assertCountEqual(payment_vouchers, [je2.name, pe2.name])
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{
 			"allow_multi_currency_invoices_against_single_party_account": 1,

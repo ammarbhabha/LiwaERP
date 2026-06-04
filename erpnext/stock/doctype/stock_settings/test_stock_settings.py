@@ -4,10 +4,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestStockSettings(ERPNextTestSuite):
+class TestStockSettings(LiwaERPTestSuite):
 	def setUp(self):
 		super().setUp()
 		frappe.db.set_single_value("Stock Settings", "clean_description_html", 0)

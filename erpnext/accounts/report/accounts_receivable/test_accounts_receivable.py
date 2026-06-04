@@ -7,10 +7,10 @@ from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sal
 from erpnext.accounts.report.accounts_receivable.accounts_receivable import execute
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAccountsReceivable(ERPNextTestSuite, AccountsTestMixin):
+class TestAccountsReceivable(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		self.create_company()
 		self.create_customer()
@@ -196,7 +196,7 @@ class TestAccountsReceivable(ERPNextTestSuite, AccountsTestMixin):
 		row = report[1]
 		self.assertEqual(len(row), 0)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"allow_multi_currency_invoices_against_single_party_account": 1},
 	)
@@ -450,7 +450,7 @@ class TestAccountsReceivable(ERPNextTestSuite, AccountsTestMixin):
 			],
 		)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"allow_multi_currency_invoices_against_single_party_account": 1, "allow_stale": 0},
 	)

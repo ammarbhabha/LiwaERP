@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestDepartment(ERPNextTestSuite):
+class TestDepartment(LiwaERPTestSuite):
 	def test_remove_department_data(self):
 		doc = create_department("Test Department", company="_Test Company")
 		frappe.delete_doc("Department", doc.name)

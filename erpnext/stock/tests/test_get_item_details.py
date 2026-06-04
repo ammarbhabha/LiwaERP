@@ -1,10 +1,10 @@
 import frappe
 
 from erpnext.stock.get_item_details import get_item_details
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestGetItemDetail(ERPNextTestSuite):
+class TestGetItemDetail(LiwaERPTestSuite):
 	def test_get_item_detail_purchase_order(self):
 		args = frappe._dict(
 			{

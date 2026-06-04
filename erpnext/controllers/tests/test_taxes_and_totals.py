@@ -4,10 +4,10 @@ import frappe
 
 from erpnext.controllers.taxes_and_totals import calculate_taxes_and_totals
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestTaxesAndTotals(ERPNextTestSuite):
+class TestTaxesAndTotals(LiwaERPTestSuite):
 	def test_regional_round_off_accounts(self):
 		"""
 		Regional overrides cannot extend the list in-place — the return

@@ -5,13 +5,13 @@ import frappe
 from frappe.utils.data import today
 
 from erpnext.accounts.report.balance_sheet.balance_sheet import execute
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 COMPANY = "_Test Company 6"
 COMPANY_SHORT_NAME = "_TC6"
 
 
-class TestBalanceSheet(ERPNextTestSuite):
+class TestBalanceSheet(LiwaERPTestSuite):
 	def test_balance_sheet(self):
 		create_account("VAT Liabilities", f"Duties and Taxes - {COMPANY_SHORT_NAME}", COMPANY)
 		create_account("Advance VAT Paid", f"Duties and Taxes - {COMPANY_SHORT_NAME}", COMPANY)

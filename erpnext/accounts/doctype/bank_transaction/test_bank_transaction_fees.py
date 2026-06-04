@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBankTransactionFees(ERPNextTestSuite):
+class TestBankTransactionFees(LiwaERPTestSuite):
 	def test_included_fee_throws(self):
 		"""A fee that's part of a withdrawal cannot be bigger than the
 		withdrawal itself."""

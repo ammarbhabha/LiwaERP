@@ -35,11 +35,11 @@ from erpnext.selling.doctype.sales_order.sales_order import (
 from erpnext.stock.doctype.item.test_item import make_item
 from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 from erpnext.stock.get_item_details import get_bin_details
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSalesOrder(ERPNextTestSuite):
-	@ERPNextTestSuite.change_settings(
+class TestSalesOrder(LiwaERPTestSuite):
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings",
 		{
 			"auto_insert_price_list_rate_if_missing": 1,
@@ -126,7 +126,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		so.reload()
 		self.assertEqual(so.status, "Completed")
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Selling Settings", {"allow_multiple_items": 1, "allow_negative_rates_for_items": 1}
 	)
 	def test_sales_order_with_negative_rate(self):
@@ -158,7 +158,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		)
 		update_child_qty_rate("Sales Order", trans_item, so.name)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_sales_order_qty(self):
 		so = make_sales_order(qty=1, do_not_save=True)
 
@@ -270,7 +270,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		so.load_from_db()
 		self.assertEqual(so.per_billed, 0)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings", {"automatically_fetch_payment_terms": 1}
 	)  # Enable auto fetch
 	def test_make_sales_invoice_with_terms(self):
@@ -301,7 +301,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		si1 = make_sales_invoice(so.name)
 		self.assertEqual(len(si1.get("items")), 0)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings", {"automatically_fetch_payment_terms": 1}
 	)  # Enable auto fetch
 	def test_auto_fetch_terms_enable(self):
@@ -317,7 +317,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		si.insert()
 		si.submit()
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings", {"automatically_fetch_payment_terms": 0}
 	)  # Disable auto fetch
 	def test_auto_fetch_terms_disable(self):
@@ -827,7 +827,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		# reserved qty in packed item should increase after changing bundle item uom
 		self.assertEqual(get_reserved_qty("_Packed Item"), existing_reserved_qty + 8)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_update_child_with_tax_template(self):
 		"""
 		Test Action: Create a SO with one item having its tax account head already in the SO.
@@ -1481,7 +1481,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		si.insert()
 		self.assertTrue(si.get("payment_schedule"))
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_make_work_order(self):
 		from erpnext.selling.doctype.sales_order.sales_order import get_work_order_items
 
@@ -1542,7 +1542,7 @@ class TestSalesOrder(ERPNextTestSuite):
 
 		self.assertRaises(frappe.LinkExistsError, so_doc.cancel)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings", {"unlink_advance_payment_on_cancelation_of_order": 1}
 	)
 	def test_advance_paid_upon_payment_cancellation(self):
@@ -1799,7 +1799,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		so.load_from_db()
 		self.assertRaises(frappe.LinkExistsError, so.cancel)
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"automatically_fetch_payment_terms": 1})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"automatically_fetch_payment_terms": 1})
 	def test_payment_terms_are_fetched_when_creating_sales_invoice(self):
 		from erpnext.accounts.doctype.payment_entry.test_payment_entry import (
 			create_payment_terms_template,
@@ -2131,7 +2131,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		self.assertEqual(len(dn.packed_items), 1)
 		self.assertEqual(dn.items[0].item_code, "_Test Product Bundle Item Partial 2")
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"editable_bundle_item_rates": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"editable_bundle_item_rates": 1})
 	def test_expired_rate_for_packed_item(self):
 		bundle = "_Test Product Bundle 1"
 		packed_item = "_Packed Item 1"
@@ -2469,7 +2469,7 @@ class TestSalesOrder(ERPNextTestSuite):
 
 		self.assertRaises(frappe.ValidationError, so1.update_status, "Draft")
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"enable_stock_reservation": True})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"enable_stock_reservation": True})
 	def test_warehouse_mapping_based_on_stock_reservation(self):
 		warehouse = "Stores - _TC"
 		warehouse_finished = "Finished Goods - _TC"
@@ -2581,7 +2581,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		sre_doc.reload()
 		self.assertEqual(sre_doc.status, "Delivered")
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_zero_qty_in_sales_order": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_zero_qty_in_sales_order": 1})
 	def test_deliver_zero_qty_purchase_order(self):
 		"""
 		Test the flow of a Unit Price SO and DN creation against it until completion.
@@ -2629,7 +2629,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		self.assertEqual(so.per_delivered, 100.0)
 		self.assertEqual(so.status, "To Bill")
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_zero_qty_in_sales_order": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_zero_qty_in_sales_order": 1})
 	def test_bill_zero_qty_sales_order(self):
 		so = make_sales_order(qty=0)
 
@@ -2776,7 +2776,7 @@ class TestSalesOrder(ERPNextTestSuite):
 		so = make_sales_order(item_code=fg_item, qty=10, rate=50, warehouse=fg_warehouse, do_not_save=1)
 		self.assertRaises(frappe.ValidationError, so.save)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings", {"enable_stock_reservation": 1, "use_serial_batch_fields": 0}
 	)
 	def test_product_bundle_reservation(self):

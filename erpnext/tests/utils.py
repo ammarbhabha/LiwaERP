@@ -2988,7 +2988,7 @@ class BootStrapTestData:
 BootStrapTestData()
 
 
-class ERPNextTestSuite(unittest.TestCase):
+class LiwaERPTestSuite(unittest.TestCase):
 	@classmethod
 	def registerAs(cls, _as):
 		def decorator(cm_func):
@@ -3022,7 +3022,7 @@ class ERPNextTestSuite(unittest.TestCase):
 			frappe.set_user(old_user)
 
 
-@ERPNextTestSuite.registerAs(staticmethod)
+@LiwaERPTestSuite.registerAs(staticmethod)
 @contextmanager
 def change_settings(doctype, settings_dict=None, /, **settings) -> None:
 	"""Temporarily: change settings in a settings doctype."""

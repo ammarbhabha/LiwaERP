@@ -10,10 +10,10 @@ from erpnext.manufacturing.doctype.workstation.workstation import (
 	WorkstationHolidayError,
 	check_if_within_operating_hours,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestWorkstation(ERPNextTestSuite):
+class TestWorkstation(LiwaERPTestSuite):
 	def test_validate_timings(self):
 		check_if_within_operating_hours(
 			"_Test Workstation 1", "Operation 1", "2013-02-02 11:00:00", "2013-02-02 19:00:00"

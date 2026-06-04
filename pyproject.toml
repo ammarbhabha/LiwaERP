@@ -90,6 +90,6 @@ docstring-code-format = true
 
 [project.urls]
 Homepage = "https://frappe.io/erpnext"
-Repository = "https://github.com/frappe/erpnext.git"
+Repository = "https://github.com/Ammarplays/LiwaERP.git"
 Documentation = "https://docs.frappe.io/erpnext"
-"Bug Reports" = "https://github.com/frappe/erpnext/issues"
+"Bug Reports" = "https://github.com/Ammarplays/LiwaERP/issues"

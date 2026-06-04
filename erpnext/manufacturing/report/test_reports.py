@@ -1,9 +1,9 @@
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite, ReportFilters, ReportName, execute_script_report
+from erpnext.tests.utils import LiwaERPTestSuite, ReportFilters, ReportName, execute_script_report
 
 
-class TestManufacturingReports(ERPNextTestSuite):
+class TestManufacturingReports(LiwaERPTestSuite):
 	def setUp(self):
 		self.setup_default_filters()
 

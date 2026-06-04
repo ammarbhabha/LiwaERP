@@ -1,9 +1,9 @@
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAccountsSettings(ERPNextTestSuite):
+class TestAccountsSettings(LiwaERPTestSuite):
 	def test_stale_days(self):
 		cur_settings = frappe.get_doc("Accounts Settings", "Accounts Settings")
 		cur_settings.allow_stale = 0

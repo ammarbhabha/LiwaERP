@@ -10,10 +10,10 @@ from erpnext.selling.report.sales_person_target_variance_based_on_item_group.tes
 	create_sales_target_doc,
 	create_target_distribution,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSalesPartnerTargetVarianceBasedOnItemGroup(ERPNextTestSuite):
+class TestSalesPartnerTargetVarianceBasedOnItemGroup(LiwaERPTestSuite):
 	def setUp(self):
 		self.fiscal_year = get_fiscal_year(nowdate())[0]
 

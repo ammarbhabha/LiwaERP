@@ -923,7 +923,7 @@ msgstr ""
 msgid "<span class=\"h4\"><b>Subcontracting Inward and Outward</b></span>"
 msgstr "<span class=\"h4\"><b>Giao việc ngoài vào và ra</b></span>"
 
-#. Header text in the ERPNext Settings Workspace
+#. Header text in the LiwaERP Settings Workspace
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 msgid "<span class=\"h4\"><b>Your Shortcuts\n"
 "\t\t\t\n"
@@ -2145,7 +2145,7 @@ msgstr "Phải thu/Phải trả Tài khoản"
 
 #. Name of a DocType
 #. Label of a Link in the Invoicing Workspace
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/accounts/doctype/accounts_settings/accounts_settings.json
 #: erpnext/accounts/workspace/invoicing/invoicing.json
@@ -8969,7 +8969,7 @@ msgstr "Tỷ giá Mua"
 
 #. Name of a DocType
 #. Label of a Link in the Buying Workspace
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/buying/doctype/buying_settings/buying_settings.json
 #: erpnext/buying/workspace/buying/buying.json
@@ -11348,7 +11348,7 @@ msgid "Company Abbreviation"
 msgstr "Tên viết tắt Công ty"
 
 #: erpnext/public/js/utils/naming_series.js:101
-msgid "Company Abbreviation (requires ERPNext to be installed)"
+msgid "Company Abbreviation (requires LiwaERP to be installed)"
 msgstr ""
 
 #: erpnext/public/js/setup_wizard.js:174
@@ -16107,7 +16107,7 @@ msgstr "Xóa giao dịch"
 msgid "Delete all the Transactions for this Company"
 msgstr "Xóa tất cả giao dịch cho công ty này"
 
-#. Label of a Link in the ERPNext Settings Workspace
+#. Label of a Link in the LiwaERP Settings Workspace
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 msgid "Deleted Documents"
 msgstr ""
@@ -18162,8 +18162,8 @@ msgstr "EMU của dòng điện"
 
 #. Label of a Desktop Icon
 #: erpnext/desktop_icon/erpnext.json
-msgid "ERPNext"
-msgstr "ERPNext"
+msgid "LiwaERP"
+msgstr "LiwaERP"
 
 #. Label of a Desktop Icon
 #. Name of a Workspace
@@ -18171,17 +18171,17 @@ msgstr "ERPNext"
 #: erpnext/desktop_icon/erpnext_settings.json
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 #: erpnext/workspace_sidebar/erpnext_settings.json
-msgid "ERPNext Settings"
-msgstr "Cài đặt ERPNext"
+msgid "LiwaERP Settings"
+msgstr "Cài đặt LiwaERP"
 
 #. Label of the user_id (Data) field in DocType 'Employee Group Table'
 #: erpnext/setup/doctype/employee_group_table/employee_group_table.json
-msgid "ERPNext User ID"
-msgstr "ID người dùng ERPNext"
+msgid "LiwaERP User ID"
+msgstr "ID người dùng LiwaERP"
 
 #. Description of the 'Maintain Stock' (Check) field in DocType 'Item'
 #: erpnext/stock/doctype/item/item.json
-msgid "ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items."
+msgid "LiwaERP will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items."
 msgstr ""
 
 #. Option for the 'How often should project be updated of Total Purchase Cost
@@ -20646,7 +20646,7 @@ msgid "Fiscal Year"
 msgstr "Năm tài chính"
 
 #: erpnext/public/js/utils/naming_series.js:100
-msgid "Fiscal Year (requires ERPNext to be installed)"
+msgid "Fiscal Year (requires LiwaERP to be installed)"
 msgstr ""
 
 #. Name of a DocType
@@ -22127,7 +22127,7 @@ msgid "Give free item for every N quantity"
 msgstr "Tặng vật phẩm miễn phí cho mỗi N số lượng"
 
 #. Name of a DocType
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/setup/doctype/global_defaults/global_defaults.json
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
@@ -23526,12 +23526,12 @@ msgid "If this item has variants, then it cannot be selected in sales orders etc
 msgstr "Nếu mặt hàng này có biến thể, thì nó không thể được chọn trong đơn đặt hàng, v.v."
 
 #: erpnext/buying/doctype/buying_settings/buying_settings.js:76
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
-msgstr "Nếu tùy chọn này được đặt là 'Có', ERPNext sẽ ngăn bạn tạo Hóa đơn mua hàng hoặc Phiếu nhận hàng mà không tạo Đơn đặt hàng trước. Cấu hình này có thể được ghi đè cho một nhà cung cấp cụ thể bằng cách bật hộp kiểm 'Cho phép tạo hóa đơn mua hàng mà không cần đơn đặt hàng' trong mẫu nhà cung cấp."
+msgid "If this option is configured 'Yes', LiwaERP will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
+msgstr "Nếu tùy chọn này được đặt là 'Có', LiwaERP sẽ ngăn bạn tạo Hóa đơn mua hàng hoặc Phiếu nhận hàng mà không tạo Đơn đặt hàng trước. Cấu hình này có thể được ghi đè cho một nhà cung cấp cụ thể bằng cách bật hộp kiểm 'Cho phép tạo hóa đơn mua hàng mà không cần đơn đặt hàng' trong mẫu nhà cung cấp."
 
 #: erpnext/buying/doctype/buying_settings/buying_settings.js:83
-msgid "If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
-msgstr "Nếu tùy chọn này được đặt là 'Có', ERPNext sẽ ngăn bạn tạo Hóa đơn mua hàng mà không tạo Phiếu nhận hàng trước. Cấu hình này có thể được ghi đè cho một nhà cung cấp cụ thể bằng cách bật hộp kiểm 'Cho phép tạo hóa đơn mua hàng mà không cần phiếu nhận hàng' trong mẫu nhà cung cấp."
+msgid "If this option is configured 'Yes', LiwaERP will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
+msgstr "Nếu tùy chọn này được đặt là 'Có', LiwaERP sẽ ngăn bạn tạo Hóa đơn mua hàng mà không tạo Phiếu nhận hàng trước. Cấu hình này có thể được ghi đè cho một nhà cung cấp cụ thể bằng cách bật hộp kiểm 'Cho phép tạo hóa đơn mua hàng mà không cần phiếu nhận hàng' trong mẫu nhà cung cấp."
 
 #: erpnext/manufacturing/doctype/manufacturing_settings/manufacturing_settings.js:10
 msgid "If ticked, multiple materials can be used for a single Work Order. This is useful if one or more time consuming products are being manufactured."
@@ -23556,8 +23556,8 @@ msgid "If yes, then this warehouse will be used to store rejected materials"
 msgstr "Nếu có, thì kho này sẽ được sử dụng để lưu trữ nguyên vật liệu bị từ chối"
 
 #: erpnext/stock/doctype/item/item.js:1142
-msgid "If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item."
-msgstr "Nếu bạn đang duy trì tồn kho của mặt hàng này trong Kho của mình, ERPNext sẽ tạo một mục sổ tồn kho cho mỗi giao dịch của mặt hàng này."
+msgid "If you are maintaining stock of this Item in your Inventory, LiwaERP will make a stock ledger entry for each transaction of this item."
+msgstr "Nếu bạn đang duy trì tồn kho của mặt hàng này trong Kho của mình, LiwaERP sẽ tạo một mục sổ tồn kho cho mỗi giao dịch của mặt hàng này."
 
 #. Description of the 'Unreconciled Entries' (Section Break) field in DocType
 #. 'Payment Reconciliation'
@@ -23765,7 +23765,7 @@ msgstr ""
 msgid "Import Chart of Accounts from a csv file"
 msgstr "Nhập biểu đồ tài khoản từ tệp csv"
 
-#. Label of a Link in the ERPNext Settings Workspace
+#. Label of a Link in the LiwaERP Settings Workspace
 #. Label of a Link in the Home Workspace
 #: erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 #: erpnext/setup/workspace/home/home.json
@@ -48381,7 +48381,7 @@ msgstr "Tỷ giá Bán hàng"
 
 #. Name of a DocType
 #. Label of a Link in the Selling Workspace
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Label of a Workspace Sidebar Item
 #: erpnext/selling/doctype/selling_settings/selling_settings.json
 #: erpnext/selling/workspace/selling/selling.json
@@ -51536,7 +51536,7 @@ msgstr "Số lượng dự trữ tồn kho (theo ĐVT tồn kho)"
 
 #. Label of the auto_accounting_for_stock_settings (Section Break) field in
 #. DocType 'Company'
-#. Label of a shortcut in the ERPNext Settings Workspace
+#. Label of a shortcut in the LiwaERP Settings Workspace
 #. Name of a DocType
 #. Label of a Link in the Stock Workspace
 #. Label of a Workspace Sidebar Item
@@ -55094,8 +55094,8 @@ msgid "This action will stop future billing. Are you sure you want to cancel thi
 msgstr "Hành động này sẽ dừng thanh toán trong tương lai. Bạn có chắc chắn muốn hủy đăng ký này không?"
 
 #: erpnext/accounts/doctype/bank_account/bank_account.js:35
-msgid "This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?"
-msgstr "Hành động này sẽ hủy liên kết tài khoản này khỏi bất kỳ dịch vụ bên ngoài nào tích hợp ERPNext với tài khoản ngân hàng của bạn. Điều này không thể hoàn tác. Bạn có chắc chắn không?"
+msgid "This action will unlink this account from any external service integrating LiwaERP with your bank accounts. It cannot be undone. Are you certain ?"
+msgstr "Hành động này sẽ hủy liên kết tài khoản này khỏi bất kỳ dịch vụ bên ngoài nào tích hợp LiwaERP với tài khoản ngân hàng của bạn. Điều này không thể hoàn tác. Bạn có chắc chắn không?"
 
 #. Description of the 'Allow Sales Order creation for expired Quotation'
 #. (Check) field in DocType 'Selling Settings'
@@ -59620,8 +59620,8 @@ msgid "Vouchers"
 msgstr "Chứng từ"
 
 #: erpnext/patches/v15_0/remove_exotel_integration.py:32
-msgid "WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration."
-msgstr "CẢNH BÁO: Ứng dụng Exotel đã được tách khỏi ERPNext, vui lòng cài đặt ứng dụng để tiếp tục sử dụng tích hợp Exotel."
+msgid "WARNING: Exotel app has been separated from LiwaERP, please install the app to continue using Exotel integration."
+msgstr "CẢNH BÁO: Ứng dụng Exotel đã được tách khỏi LiwaERP, vui lòng cài đặt ứng dụng để tiếp tục sử dụng tích hợp Exotel."
 
 #. Label of the wip_composite_asset (Link) field in DocType 'Purchase Invoice
 #. Item'
@@ -61192,8 +61192,8 @@ msgid "Zip File"
 msgstr "Tệp Zip"
 
 #: erpnext/stock/reorder_item.py:373
-msgid "[Important] [ERPNext] Auto Reorder Errors"
-msgstr "[Quan trọng] [ERPNext] Lỗi tự động sắp xếp lại"
+msgid "[Important] [LiwaERP] Auto Reorder Errors"
+msgstr "[Quan trọng] [LiwaERP] Lỗi tự động sắp xếp lại"
 
 #: erpnext/controllers/status_updater.py:304
 msgid "`Allow Negative rates for Items`"

@@ -14,10 +14,10 @@ from erpnext.accounts.doctype.sales_invoice.mapper import (
 from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import (
 	create_sales_invoice_against_cost_center,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestDunning(ERPNextTestSuite):
+class TestDunning(LiwaERPTestSuite):
 	def test_dunning_without_fees(self):
 		dunning = create_dunning(overdue_days=20)
 

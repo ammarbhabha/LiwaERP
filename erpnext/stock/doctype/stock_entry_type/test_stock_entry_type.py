@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestStockEntryType(ERPNextTestSuite):
+class TestStockEntryType(LiwaERPTestSuite):
 	def test_stock_entry_type_non_standard(self):
 		stock_entry_type = "Test Manufacturing"
 

@@ -4,10 +4,10 @@
 import frappe
 
 from erpnext.projects.doctype.task.test_task import create_task
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestProjectTemplate(ERPNextTestSuite):
+class TestProjectTemplate(LiwaERPTestSuite):
 	pass
 
 

@@ -1,8 +1,8 @@
 # Copyright (c) 2019, Frappe Technologies Pvt. Ltd. and Contributors
 # See license.txt
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestQualityFeedbackTemplate(ERPNextTestSuite):
+class TestQualityFeedbackTemplate(LiwaERPTestSuite):
 	pass

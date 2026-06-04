@@ -6,7 +6,7 @@ import frappe
 from frappe.utils import cint, flt
 
 from erpnext.setup.utils import get_exchange_rate
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def save_new_records(test_records):
@@ -77,7 +77,7 @@ def patched_requests_get(*args, **kwargs):
 
 
 @mock.patch("requests.get", side_effect=patched_requests_get)
-class TestCurrencyExchange(ERPNextTestSuite):
+class TestCurrencyExchange(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("Currency Exchange")
 		save_new_records(self.globalTestRecords["Currency Exchange"])

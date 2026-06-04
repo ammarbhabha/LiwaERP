@@ -7,7 +7,7 @@ from frappe.utils import today
 from erpnext.stock.doctype.item.test_item import make_item
 from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 from erpnext.stock.report.stock_balance.stock_balance import execute
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def stock_balance(filters):
@@ -15,7 +15,7 @@ def stock_balance(filters):
 	return [_dict(row) for row in execute(filters)[1]]
 
 
-class TestStockBalance(ERPNextTestSuite):
+class TestStockBalance(LiwaERPTestSuite):
 	# ----------- utils
 
 	def setUp(self):
@@ -103,7 +103,7 @@ class TestStockBalance(ERPNextTestSuite):
 		)
 		self.assertInvariants(rows)
 
-	@ERPNextTestSuite.change_settings("System Settings", {"float_precision": 3, "currency_precision": 3})
+	@LiwaERPTestSuite.change_settings("System Settings", {"float_precision": 3, "currency_precision": 3})
 	def test_opening_balance(self):
 		self.generate_stock_ledger(
 			self.item.name,

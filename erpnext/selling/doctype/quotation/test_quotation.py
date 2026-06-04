@@ -9,10 +9,10 @@ from frappe.utils import add_days, add_months, flt, getdate, nowdate
 
 from erpnext.controllers.accounts_controller import InvalidQtyError, update_child_qty_rate
 from erpnext.selling.doctype.quotation.mapper import make_sales_order
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestQuotation(ERPNextTestSuite):
+class TestQuotation(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("Quotation")
 
@@ -238,7 +238,7 @@ class TestQuotation(ERPNextTestSuite):
 
 		self.assertFalse(get_attachment_urls("Quotation", quotation.name))
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"automatically_fetch_payment_terms": 1},
 	)
@@ -382,7 +382,7 @@ class TestQuotation(ERPNextTestSuite):
 		sales_order.delivery_date = nowdate()
 		sales_order.insert()
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{
 			"add_taxes_from_item_tax_template": 0,
@@ -932,7 +932,7 @@ class TestQuotation(ERPNextTestSuite):
 		quotation.items[0].conversion_factor = 2.23
 		self.assertRaises(frappe.ValidationError, quotation.save)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"add_taxes_from_item_tax_template": 1, "add_taxes_from_taxes_and_charges_template": 0},
 	)
@@ -1000,7 +1000,7 @@ class TestQuotation(ERPNextTestSuite):
 		self.assertEqual(quotation.rounding_adjustment, 0)
 		self.assertEqual(quotation.rounded_total, 0)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_zero_qty_in_quotation": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_zero_qty_in_quotation": 1})
 	def test_so_from_zero_qty_quotation(self):
 		from erpnext.selling.doctype.quotation.mapper import make_sales_order
 		from erpnext.stock.doctype.item.test_item import make_item
@@ -1033,7 +1033,7 @@ class TestQuotation(ERPNextTestSuite):
 		quotation.reload()
 		self.assertEqual(quotation.status, "Ordered")
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_duplicate_items_in_quotation(self):
 		from erpnext.selling.doctype.quotation.mapper import make_sales_order
 		from erpnext.stock.doctype.item.test_item import make_item
@@ -1080,7 +1080,7 @@ class TestQuotation(ERPNextTestSuite):
 		quotation.reload()
 		self.assertEqual(quotation.status, "Ordered")
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"allow_pegged_currencies_exchange_rates": True})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"allow_pegged_currencies_exchange_rates": True})
 	def test_make_quotation_qar_to_inr(self):
 		quotation = make_quotation(
 			currency="QAR",
@@ -1133,7 +1133,7 @@ class TestQuotation(ERPNextTestSuite):
 		quotation.reload()
 		self.assertEqual(quotation.status, "Open")
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"automatically_fetch_payment_terms": 1},
 	)

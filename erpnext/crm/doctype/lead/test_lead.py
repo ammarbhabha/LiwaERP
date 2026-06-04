@@ -6,10 +6,10 @@ from frappe.utils import random_string, today
 
 from erpnext.crm.doctype.lead.mapper import make_opportunity
 from erpnext.crm.utils import get_linked_prospect
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestLead(ERPNextTestSuite):
+class TestLead(LiwaERPTestSuite):
 	def test_make_customer(self):
 		from erpnext.crm.doctype.lead.mapper import make_customer
 

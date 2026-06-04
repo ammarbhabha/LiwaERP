@@ -7,10 +7,10 @@ import frappe
 from erpnext.buying.doctype.supplier_scorecard_variable.supplier_scorecard_variable import (
 	VariablePathNotFound,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSupplierScorecardVariable(ERPNextTestSuite):
+class TestSupplierScorecardVariable(LiwaERPTestSuite):
 	def test_variable_exist(self):
 		for d in test_existing_variables:
 			my_doc = frappe.get_doc("Supplier Scorecard Variable", d.get("name"))

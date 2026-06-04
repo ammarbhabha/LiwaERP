@@ -8,10 +8,10 @@ from erpnext.stock.doctype.item.test_item import make_item
 from erpnext.stock.report.item_shortage_report.item_shortage_report import (
 	execute as item_shortage_report,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestItemShortageReport(ERPNextTestSuite):
+class TestItemShortageReport(LiwaERPTestSuite):
 	def test_item_shortage_report(self):
 		item = make_item().name
 		so = make_sales_order(item_code=item)

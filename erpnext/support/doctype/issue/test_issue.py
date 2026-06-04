@@ -9,10 +9,10 @@ from frappe.utils import flt, get_datetime
 from erpnext.support.doctype.service_level_agreement.test_service_level_agreement import (
 	create_service_level_agreements_for_issues,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSetUp(ERPNextTestSuite):
+class TestSetUp(LiwaERPTestSuite):
 	def setUp(self):
 		frappe.db.sql("delete from `tabService Level Agreement`")
 		frappe.db.sql("delete from `tabService Level Priority`")

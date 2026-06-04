@@ -10,14 +10,14 @@ from erpnext.accounts.utils import (
 	_check_packed_qty_warn,
 )
 from erpnext.selling.doctype.customer.test_customer import set_credit_limit
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def _get_orange_warnings():
 	return [m for m in frappe.message_log if m.get("indicator") == "orange"]
 
 
-class _CreditLimitBase(ERPNextTestSuite):
+class _CreditLimitBase(LiwaERPTestSuite):
 	COMPANY = "_Test Company"
 	CUSTOMER = "_Test Customer"
 	CREDIT_LIMIT = 100.0
@@ -222,7 +222,7 @@ class TestCreditLimitWarnDeliveryNote(_CreditLimitBase):
 # ---------------------------------------------------------------------------
 
 
-class TestPackedQtyWarn(ERPNextTestSuite):
+class TestPackedQtyWarn(LiwaERPTestSuite):
 	COMPANY = "_Test Company"
 	CUSTOMER = "_Test Customer"
 

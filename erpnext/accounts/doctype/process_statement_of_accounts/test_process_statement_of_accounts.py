@@ -11,10 +11,10 @@ from erpnext.accounts.doctype.process_statement_of_accounts.process_statement_of
 )
 from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestProcessStatementOfAccounts(ERPNextTestSuite, AccountsTestMixin):
+class TestProcessStatementOfAccounts(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		frappe.db.set_single_value("Selling Settings", "validate_selling_price", 0)
 		frappe.db.set_value(

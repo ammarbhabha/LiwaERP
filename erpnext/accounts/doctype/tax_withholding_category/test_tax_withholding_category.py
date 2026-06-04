@@ -10,10 +10,10 @@ from frappe.utils import add_days, add_months, getdate, today
 from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_entry
 from erpnext.accounts.utils import get_fiscal_year
 from erpnext.buying.doctype.purchase_order.mapper import make_purchase_invoice
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestTaxWithholdingCategory(ERPNextTestSuite):
+class TestTaxWithholdingCategory(LiwaERPTestSuite):
 	def setUp(self):
 		# create relevant supplier, etc
 		create_records()
@@ -1069,7 +1069,7 @@ class TestTaxWithholdingCategory(ERPNextTestSuite):
 
 		self.cleanup_invoices(invoices)
 
-	@ERPNextTestSuite.change_settings("Buying Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Buying Settings", {"allow_multiple_items": 1})
 	def test_tds_calculation_on_net_total_partial_tds(self):
 		self.setup_party_with_category("Supplier", "Test TDS Supplier4", "Cumulative Threshold TDS")
 		invoices = []
@@ -2228,7 +2228,7 @@ class TestTaxWithholdingCategory(ERPNextTestSuite):
 		)
 		self.cleanup_invoices(invoices)
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": 1})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": 1})
 	def test_tds_payment_entry_cancellation(self):
 		"""
 		Test payment entry cancellation clears withholding references from matched entries
@@ -2406,7 +2406,7 @@ class TestTaxWithholdingCategory(ERPNextTestSuite):
 		self.validate_tax_withholding_entries("Purchase Invoice", pi1.name, expected_entries)
 		self.cleanup_invoices(invoices)
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": 1})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": 1})
 	def test_tds_purchase_invoice_cancellation(self):
 		"""
 		Test that after cancellation, new documents get automatically adjusted against remaining entries

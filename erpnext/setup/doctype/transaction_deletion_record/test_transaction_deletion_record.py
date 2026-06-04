@@ -4,10 +4,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestTransactionDeletionRecord(ERPNextTestSuite):
+class TestTransactionDeletionRecord(LiwaERPTestSuite):
 	def setUp(self):
 		# Clear all deletion cache flags from previous tests
 		self._clear_all_deletion_cache_flags()

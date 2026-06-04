@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestModeofPayment(ERPNextTestSuite):
+class TestModeofPayment(LiwaERPTestSuite):
 	pass
 
 

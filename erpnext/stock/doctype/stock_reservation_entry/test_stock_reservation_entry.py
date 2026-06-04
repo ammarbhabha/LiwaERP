@@ -18,16 +18,16 @@ from erpnext.stock.doctype.stock_reservation_entry.stock_reservation_entry impor
 	has_reserved_stock,
 )
 from erpnext.stock.utils import get_stock_balance
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestStockReservationEntry(ERPNextTestSuite):
+class TestStockReservationEntry(LiwaERPTestSuite):
 	def setUp(self) -> None:
 		self.warehouse = "_Test Warehouse - _TC"
 		self.sr_item = make_item(properties={"is_stock_item": 1, "valuation_rate": 100})
 		create_material_receipt(items={self.sr_item.name: self.sr_item}, warehouse=self.warehouse, qty=100)
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_validate_stock_reservation_settings(self) -> None:
 		from erpnext.stock.doctype.stock_reservation_entry.stock_reservation_entry import (
 			validate_stock_reservation_settings,
@@ -120,7 +120,7 @@ class TestStockReservationEntry(ERPNextTestSuite):
 		sre.load_from_db()
 		self.assertEqual(sre.status, "Cancelled")
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings", {"allow_negative_stock": 0, "enable_stock_reservation": 1}
 	)
 	def test_cant_consume_reserved_stock(self) -> None:
@@ -170,7 +170,7 @@ class TestStockReservationEntry(ERPNextTestSuite):
 		se.submit()
 		se.cancel()
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings",
 		{
 			"allow_negative_stock": 0,
@@ -313,7 +313,7 @@ class TestStockReservationEntry(ERPNextTestSuite):
 				for sre_detail in sre_details:
 					self.assertEqual(sre_detail.reserved_qty, sre_detail.delivered_qty)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings",
 		{
 			"allow_negative_stock": 0,
@@ -433,7 +433,7 @@ class TestStockReservationEntry(ERPNextTestSuite):
 					# Test - 9: After Delivery Note cancellation, SB Entry Delivered Qty should be `0`.
 					self.assertEqual(sb_entry.delivered_qty, 0)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings",
 		{
 			"allow_negative_stock": 0,
@@ -514,7 +514,7 @@ class TestStockReservationEntry(ERPNextTestSuite):
 				# Test - 3: Reserved Serial/Batch Nos should be equal to Picked Serial/Batch Nos.
 				self.assertSetEqual(picked_sb_details, reserved_sb_details)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings",
 		{
 			"allow_negative_stock": 0,
@@ -594,7 +594,7 @@ class TestStockReservationEntry(ERPNextTestSuite):
 				# Test - 3: Reserved Serial/Batch Nos should be equal to PR Item Serial/Batch Nos.
 				self.assertEqual(set(sb_details), set(reserved_sb_details))
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings",
 		{
 			"allow_negative_stock": 0,

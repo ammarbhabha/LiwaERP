@@ -9,10 +9,10 @@ from erpnext.support.doctype.issue_priority.test_issue_priority import make_prio
 from erpnext.support.doctype.service_level_agreement.service_level_agreement import (
 	get_service_level_agreement_fields,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestServiceLevelAgreement(ERPNextTestSuite):
+class TestServiceLevelAgreement(LiwaERPTestSuite):
 	def test_service_level_agreement(self):
 		# Default Service Level Agreement
 		create_default_service_level_agreement = create_service_level_agreement(

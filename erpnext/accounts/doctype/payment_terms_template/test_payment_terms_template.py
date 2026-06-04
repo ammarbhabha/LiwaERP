@@ -5,10 +5,10 @@ import frappe
 from frappe.utils import add_days, getdate
 
 from erpnext.controllers.accounts_controller import get_payment_term_details
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPaymentTermsTemplate(ERPNextTestSuite):
+class TestPaymentTermsTemplate(LiwaERPTestSuite):
 	def test_create_template(self):
 		template = frappe.get_doc(
 			{

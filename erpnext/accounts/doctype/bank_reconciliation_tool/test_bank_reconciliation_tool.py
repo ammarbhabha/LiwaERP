@@ -12,10 +12,10 @@ from erpnext.accounts.doctype.bank_reconciliation_tool.bank_reconciliation_tool 
 )
 from erpnext.accounts.doctype.payment_entry.test_payment_entry import create_payment_entry
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBankReconciliationTool(ERPNextTestSuite, AccountsTestMixin):
+class TestBankReconciliationTool(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		self.create_company()
 		self.create_customer()

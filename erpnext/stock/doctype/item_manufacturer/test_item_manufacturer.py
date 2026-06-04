@@ -2,8 +2,8 @@
 # See license.txt
 # import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestItemManufacturer(ERPNextTestSuite):
+class TestItemManufacturer(LiwaERPTestSuite):
 	pass

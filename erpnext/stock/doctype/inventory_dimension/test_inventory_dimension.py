@@ -17,10 +17,10 @@ from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_pu
 from erpnext.stock.doctype.stock_entry.stock_entry_utils import make_stock_entry
 from erpnext.stock.doctype.stock_ledger_entry.stock_ledger_entry import InventoryDimensionNegativeStockError
 from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestInventoryDimension(ERPNextTestSuite):
+class TestInventoryDimension(LiwaERPTestSuite):
 	def test_validate_inventory_dimension(self):
 		# Can not be child doc
 		inv_dim1 = create_inventory_dimension(
@@ -492,7 +492,7 @@ class TestInventoryDimension(ERPNextTestSuite):
 
 		self.assertEqual(site_name, "Site 1")
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_validate_negative_stock_with_multiple_dimension(self):
 		item_code = "Test Negative Multi Inventory Dimension Item"
 		create_item(item_code)

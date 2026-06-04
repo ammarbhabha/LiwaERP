@@ -1,7 +1,7 @@
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
-# ERPNext - web based ERP (http://erpnext.com)
+# LiwaERP - web based ERP (http://erpnext.com)
 # For license information, please see license.txt
 
 import json
@@ -30,10 +30,10 @@ from erpnext.stock.utils import (
 	get_stock_value_on,
 	get_valuation_method,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestStockReconciliation(ERPNextTestSuite, StockTestMixin):
+class TestStockReconciliation(LiwaERPTestSuite, StockTestMixin):
 	def setUp(self):
 		frappe.db.set_single_value("Stock Settings", "allow_negative_stock", 1)
 		frappe.local.future_sle = {}
@@ -45,7 +45,7 @@ class TestStockReconciliation(ERPNextTestSuite, StockTestMixin):
 	def test_reco_for_moving_average(self):
 		self._test_reco_sle_gle("Moving Average")
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 1})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 1})
 	def _test_reco_sle_gle(self, valuation_method):
 		item_code = self.make_item(properties={"valuation_method": valuation_method}).name
 
@@ -418,7 +418,7 @@ class TestStockReconciliation(ERPNextTestSuite, StockTestMixin):
 		assertBalance(pr2, 11)
 		assertBalance(sr4, 6)  # check if future stock reco is unaffected
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_backdated_stock_reco_future_negative_stock(self):
 		"""
 		Test if a backdated stock reco causes future negative stock and is blocked.
@@ -467,7 +467,7 @@ class TestStockReconciliation(ERPNextTestSuite, StockTestMixin):
 		dn2.cancel()
 		pr1.cancel()
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_negative_stock": 0})
 	def test_backdated_stock_reco_cancellation_future_negative_stock(self):
 		"""
 		Test if a backdated stock reco cancellation that causes future negative stock is blocked.
@@ -671,7 +671,7 @@ class TestStockReconciliation(ERPNextTestSuite, StockTestMixin):
 		self.assertEqual(flt(sl_entry.actual_qty), 1.0)
 		self.assertEqual(flt(sl_entry.qty_after_transaction), 1.0)
 
-	@ERPNextTestSuite.change_settings("Stock Reposting Settings", {"item_based_reposting": 0})
+	@LiwaERPTestSuite.change_settings("Stock Reposting Settings", {"item_based_reposting": 0})
 	def test_backdated_stock_reco_entry(self):
 		from erpnext.stock.doctype.stock_entry.test_stock_entry import make_stock_entry
 

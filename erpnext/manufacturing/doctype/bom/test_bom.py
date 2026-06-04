@@ -20,10 +20,10 @@ from erpnext.stock.doctype.item.test_item import make_item
 from erpnext.stock.doctype.stock_reconciliation.test_stock_reconciliation import (
 	create_stock_reconciliation,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBOM(ERPNextTestSuite):
+class TestBOM(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("BOM")
 

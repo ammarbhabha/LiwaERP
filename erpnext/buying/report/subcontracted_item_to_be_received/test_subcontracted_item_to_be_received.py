@@ -21,10 +21,10 @@ from erpnext.controllers.tests.test_subcontracting_controller import (
 from erpnext.subcontracting.doctype.subcontracting_order.subcontracting_order import (
 	make_subcontracting_receipt,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSubcontractedItemToBeReceived(ERPNextTestSuite):
+class TestSubcontractedItemToBeReceived(LiwaERPTestSuite):
 	def test_pending_and_received_qty(self):
 		make_service_item("Subcontracted Service Item 1")
 		service_items = [

@@ -9,10 +9,10 @@ from erpnext.accounts.doctype.journal_entry.test_journal_entry import make_journ
 from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
 from erpnext.accounts.general_ledger import make_reverse_gl_entries
 from erpnext.accounts.utils import get_fiscal_year
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPeriodClosingVoucher(ERPNextTestSuite):
+class TestPeriodClosingVoucher(LiwaERPTestSuite):
 	def setUp(self):
 		super().setUp()
 		frappe.db.set_single_value("Accounts Settings", "use_legacy_controller_for_pcv", 1)
@@ -334,7 +334,7 @@ class TestPeriodClosingVoucher(ERPNextTestSuite):
 
 		return pcv
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"enable_immutable_ledger": 1},
 	)

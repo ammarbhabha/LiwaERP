@@ -7,10 +7,10 @@ from frappe.utils import nowdate
 
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
 from erpnext.accounts.utils import run_ledger_health_checks
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestLedgerHealth(ERPNextTestSuite, AccountsTestMixin):
+class TestLedgerHealth(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		self.create_company()
 		self.create_customer()

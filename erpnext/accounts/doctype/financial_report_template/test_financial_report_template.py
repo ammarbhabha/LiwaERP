@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class FinancialReportTemplateTestCase(ERPNextTestSuite):
+class FinancialReportTemplateTestCase(LiwaERPTestSuite):
 	"""Utility class with common setup and helper methods for all test classes"""
 
 	def cancel_docs(self, docs):

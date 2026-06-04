@@ -4,10 +4,10 @@
 import frappe
 
 from erpnext.accounts.doctype.ledger_merge.ledger_merge import start_merge
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestLedgerMerge(ERPNextTestSuite):
+class TestLedgerMerge(LiwaERPTestSuite):
 	def test_merge_success(self):
 		if not frappe.db.exists("Account", "Indirect Expenses - _TC"):
 			acc = frappe.new_doc("Account")

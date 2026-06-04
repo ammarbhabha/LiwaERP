@@ -7,12 +7,12 @@ from erpnext.support.doctype.service_level_agreement.test_service_level_agreemen
 	create_service_level_agreements_for_issues,
 )
 from erpnext.support.report.issue_analytics.issue_analytics import execute
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
-class TestIssueAnalytics(ERPNextTestSuite):
+class TestIssueAnalytics(LiwaERPTestSuite):
 	def setUp(self):
 		frappe.db.set_single_value("Support Settings", "track_service_level_agreement", 1)
 

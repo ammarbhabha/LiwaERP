@@ -4,7 +4,7 @@ import datetime
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 LEAD_EMAIL = "test_appointment_lead@example.com"
 
@@ -26,7 +26,7 @@ def create_test_appointment():
 	return test_appointment
 
 
-class TestAppointment(ERPNextTestSuite):
+class TestAppointment(LiwaERPTestSuite):
 	def setUp(self):
 		frappe.db.delete("Lead", {"email_id": LEAD_EMAIL})
 		self.test_appointment = create_test_appointment()

@@ -11,10 +11,10 @@ from erpnext.accounts.doctype.payment_entry.test_payment_entry import create_pay
 from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
 from erpnext.stock.doctype.item.test_item import create_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPaymentLedgerEntry(ERPNextTestSuite):
+class TestPaymentLedgerEntry(LiwaERPTestSuite):
 	def setUp(self):
 		self.ple = qb.DocType("Payment Ledger Entry")
 		self.create_company()
@@ -444,7 +444,7 @@ class TestPaymentLedgerEntry(ERPNextTestSuite):
 		self.assertEqual(pl_entries_for_crnote[0], expected_values[0])
 		self.assertEqual(pl_entries_for_crnote[1], expected_values[1])
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"unlink_payment_on_cancellation_of_invoice": 1, "delete_linked_ledger_entries": 1},
 	)
@@ -473,7 +473,7 @@ class TestPaymentLedgerEntry(ERPNextTestSuite):
 		si.delete()
 		self.assertRaises(frappe.DoesNotExistError, frappe.get_doc, si.doctype, si.name)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"unlink_payment_on_cancellation_of_invoice": 1, "delete_linked_ledger_entries": 1},
 	)
@@ -506,7 +506,7 @@ class TestPaymentLedgerEntry(ERPNextTestSuite):
 		si.delete()
 		self.assertRaises(frappe.DoesNotExistError, frappe.get_doc, si.doctype, si.name)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{
 			"unlink_payment_on_cancellation_of_invoice": 1,
@@ -534,7 +534,7 @@ class TestPaymentLedgerEntry(ERPNextTestSuite):
 		so.delete()
 		self.assertRaises(frappe.DoesNotExistError, frappe.get_doc, so.doctype, so.name)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"enable_immutable_ledger": 1},
 	)

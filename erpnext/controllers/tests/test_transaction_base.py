@@ -1,9 +1,9 @@
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestUtils(ERPNextTestSuite):
+class TestUtils(LiwaERPTestSuite):
 	def test_reset_default_field_value(self):
 		doc = frappe.get_doc(
 			{

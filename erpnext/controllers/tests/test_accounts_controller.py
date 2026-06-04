@@ -19,7 +19,7 @@ from erpnext.buying.doctype.purchase_order.test_purchase_order import (
 )
 from erpnext.projects.doctype.project.test_project import make_project
 from erpnext.stock.doctype.item.test_item import create_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def make_customer(customer_name, currency=None):
@@ -51,7 +51,7 @@ def make_supplier(supplier_name, currency=None):
 		return supplier_name
 
 
-class TestAccountsController(ERPNextTestSuite):
+class TestAccountsController(LiwaERPTestSuite):
 	"""
 	Test Exchange Gain/Loss booking on various scenarios.
 	Test Cases are numbered for better organization
@@ -808,7 +808,7 @@ class TestAccountsController(ERPNextTestSuite):
 		self.assertEqual(exc_je_for_si, [])
 		self.assertEqual(exc_je_for_pe, [])
 
-	@ERPNextTestSuite.change_settings("Stock Settings", {"allow_internal_transfer_at_arms_length_price": 1})
+	@LiwaERPTestSuite.change_settings("Stock Settings", {"allow_internal_transfer_at_arms_length_price": 1})
 	def test_16_internal_transfer_at_arms_length_price(self):
 		from erpnext.accounts.doctype.sales_invoice.mapper import make_inter_company_purchase_invoice
 		from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
@@ -869,7 +869,7 @@ class TestAccountsController(ERPNextTestSuite):
 		self.assertEqual(pi.items[0].rate, arms_length_price)
 		self.assertEqual(pi.items[0].valuation_rate, 100)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings", {"exchange_gain_loss_posting_date": "Reconciliation Date"}
 	)
 	def test_17_gain_loss_posting_date_for_normal_payment(self):
@@ -932,7 +932,7 @@ class TestAccountsController(ERPNextTestSuite):
 		self.assertEqual(exc_je_for_si, [])
 		self.assertEqual(exc_je_for_pe, [])
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"add_taxes_from_taxes_and_charges_template": 1, "add_taxes_from_item_tax_template": 0},
 	)
@@ -964,7 +964,7 @@ class TestAccountsController(ERPNextTestSuite):
 
 		self.assertEqual(sinv.total_taxes_and_charges, 4.5)
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Accounts Settings",
 		{"add_taxes_from_item_tax_template": 1, "add_taxes_from_taxes_and_charges_template": 0},
 	)
@@ -2457,7 +2457,7 @@ class TestAccountsController(ERPNextTestSuite):
 		po.items[0].delivered_by_supplier = 1
 		po.save()
 
-	@ERPNextTestSuite.change_settings("Global Defaults", {"use_posting_datetime_for_naming_documents": 1})
+	@LiwaERPTestSuite.change_settings("Global Defaults", {"use_posting_datetime_for_naming_documents": 1})
 	def test_document_naming_rule_based_on_posting_date(self):
 		frappe.new_doc(
 			"Document Naming Rule", document_type="Sales Invoice", prefix="SI-.MM.-.YYYY.-"

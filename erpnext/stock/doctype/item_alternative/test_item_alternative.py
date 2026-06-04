@@ -23,10 +23,10 @@ from erpnext.stock.doctype.stock_reconciliation.test_stock_reconciliation import
 from erpnext.subcontracting.doctype.subcontracting_order.subcontracting_order import (
 	make_subcontracting_receipt,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestItemAlternative(ERPNextTestSuite):
+class TestItemAlternative(LiwaERPTestSuite):
 	def setUp(self):
 		super().setUp()
 		make_items()

@@ -6,10 +6,10 @@ from frappe import qb
 from frappe.exceptions import ValidationError
 
 from erpnext.accounts.test.accounts_mixin import AccountsTestMixin
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBankTransactionRule(ERPNextTestSuite, AccountsTestMixin):
+class TestBankTransactionRule(LiwaERPTestSuite, AccountsTestMixin):
 	def setUp(self):
 		self.create_company()
 		self.create_customer()

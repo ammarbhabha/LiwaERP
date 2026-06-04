@@ -42,10 +42,10 @@ from erpnext.stock.doctype.stock_reconciliation.test_stock_reconciliation import
 )
 from erpnext.stock.doctype.warehouse.test_warehouse import get_warehouse
 from erpnext.stock.stock_ledger import get_previous_sle
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestDeliveryNote(ERPNextTestSuite):
+class TestDeliveryNote(LiwaERPTestSuite):
 	SDBNB_COMPANY_NAME = "_Test SDBNB Company"
 	SDBNB_COMPANY_ABBR = "_TSDBNB"
 
@@ -1052,7 +1052,7 @@ class TestDeliveryNote(ERPNextTestSuite):
 		self.assertEqual(dn2.per_billed, 100)
 		self.assertEqual(dn2.status, "Completed")
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": True})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"delete_linked_ledger_entries": True})
 	def test_sales_invoice_qty_after_return(self):
 		from erpnext.stock.doctype.delivery_note.mapper import make_sales_return
 
@@ -1278,7 +1278,7 @@ class TestDeliveryNote(ERPNextTestSuite):
 		si = make_sales_invoice(dn.name)
 		self.assertEqual(si.items[0].qty, 1)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_make_sales_invoice_from_dn_with_returned_qty_duplicate_items(self):
 		from erpnext.stock.doctype.delivery_note.mapper import make_sales_invoice
 
@@ -1354,7 +1354,7 @@ class TestDeliveryNote(ERPNextTestSuite):
 		frappe.db.set_single_value("Stock Settings", "use_serial_batch_fields", 1)
 		frappe.db.set_single_value("Accounts Settings", "delete_linked_ledger_entries", 0)
 
-	@ERPNextTestSuite.change_settings("Accounts Settings", {"automatically_fetch_payment_terms": 1})
+	@LiwaERPTestSuite.change_settings("Accounts Settings", {"automatically_fetch_payment_terms": 1})
 	def test_payment_terms_are_fetched_when_creating_sales_invoice(self):
 		from erpnext.accounts.doctype.payment_entry.test_payment_entry import (
 			create_payment_terms_template,
@@ -2349,7 +2349,7 @@ class TestDeliveryNote(ERPNextTestSuite):
 				for d in bundle_data:
 					self.assertEqual(d.incoming_rate, serial_no_valuation[d.serial_no])
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"allow_multiple_items": 1})
 	def test_delivery_note_return_valuation_with_use_serial_batch_field(self):
 		from erpnext.stock.doctype.delivery_note.mapper import make_sales_return
 
@@ -3365,7 +3365,7 @@ class TestDeliveryNote(ERPNextTestSuite):
 		self.assertEqual(flt(sdbnb_credit, 2), expected_amount)
 		self.assertEqual(flt(cogs_debit, 2), expected_amount)
 
-	@ERPNextTestSuite.change_settings("Selling Settings", {"validate_selling_price": 1})
+	@LiwaERPTestSuite.change_settings("Selling Settings", {"validate_selling_price": 1})
 	def test_validate_selling_price(self):
 		item_code = make_item("VSP Item", properties={"is_stock_item": 1}).name
 		make_stock_entry(item_code=item_code, target="_Test Warehouse - _TC", qty=1, basic_rate=10)

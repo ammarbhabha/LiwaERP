@@ -5,10 +5,10 @@ import frappe
 from frappe.utils import today
 
 from erpnext.accounts.report.trial_balance.trial_balance import execute
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestTrialBalance(ERPNextTestSuite):
+class TestTrialBalance(LiwaERPTestSuite):
 	def setUp(self):
 		from erpnext.accounts.doctype.account.test_account import create_account
 		from erpnext.accounts.doctype.cost_center.test_cost_center import create_cost_center

@@ -5,10 +5,10 @@ from erpnext.selling.doctype.sales_order.mapper import make_delivery_note, make_
 from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_order
 from erpnext.selling.report.sales_order_analysis.sales_order_analysis import execute
 from erpnext.stock.doctype.item.test_item import create_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSalesOrderAnalysis(ERPNextTestSuite):
+class TestSalesOrderAnalysis(LiwaERPTestSuite):
 	def create_sales_order(self, transaction_date, do_not_save=False, do_not_submit=False):
 		item = create_item(item_code="_Test Excavator", is_stock_item=0)
 		so = make_sales_order(

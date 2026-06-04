@@ -11,10 +11,10 @@ from frappe.utils.nestedset import (
 	rebuild_tree,
 )
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestItemGroup(ERPNextTestSuite):
+class TestItemGroup(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("Item Group")
 

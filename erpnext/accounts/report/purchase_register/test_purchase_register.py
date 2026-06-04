@@ -6,10 +6,10 @@ from frappe.utils import add_months, today
 
 from erpnext.accounts.report.purchase_register.purchase_register import execute
 from erpnext.stock.doctype.purchase_receipt.test_purchase_receipt import make_purchase_receipt
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPurchaseRegister(ERPNextTestSuite):
+class TestPurchaseRegister(LiwaERPTestSuite):
 	def test_purchase_register(self):
 		filters = frappe._dict(company="_Test Company 6", from_date=add_months(today(), -1), to_date=today())
 

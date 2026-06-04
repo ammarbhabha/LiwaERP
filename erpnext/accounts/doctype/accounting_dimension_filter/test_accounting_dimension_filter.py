@@ -5,10 +5,10 @@ import frappe
 
 from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sales_invoice
 from erpnext.exceptions import InvalidAccountDimensionError, MandatoryAccountDimensionError
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAccountingDimensionFilter(ERPNextTestSuite):
+class TestAccountingDimensionFilter(LiwaERPTestSuite):
 	def setUp(self):
 		create_accounting_dimension_filter()
 		self.invoice_list = []

@@ -8,10 +8,10 @@ from erpnext.accounts.doctype.shipping_rule.shipping_rule import (
 	ManyBlankToValuesError,
 	OverlappingConditionError,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestShippingRule(ERPNextTestSuite):
+class TestShippingRule(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("Shipping Rule")
 

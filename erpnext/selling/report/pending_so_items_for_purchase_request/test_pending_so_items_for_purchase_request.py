@@ -9,10 +9,10 @@ from erpnext.selling.doctype.sales_order.test_sales_order import make_sales_orde
 from erpnext.selling.report.pending_so_items_for_purchase_request.pending_so_items_for_purchase_request import (
 	execute,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPendingSOItemsForPurchaseRequest(ERPNextTestSuite):
+class TestPendingSOItemsForPurchaseRequest(LiwaERPTestSuite):
 	def test_result_for_partial_material_request(self):
 		so = make_sales_order()
 		mr = make_material_request(so.name)

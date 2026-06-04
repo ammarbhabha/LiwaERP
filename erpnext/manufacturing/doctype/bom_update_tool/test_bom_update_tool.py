@@ -10,10 +10,10 @@ from erpnext.manufacturing.doctype.bom_update_log.test_bom_update_log import (
 from erpnext.manufacturing.doctype.bom_update_tool.bom_update_tool import enqueue_replace_bom
 from erpnext.manufacturing.doctype.production_plan.test_production_plan import make_bom
 from erpnext.stock.doctype.item.test_item import create_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBOMUpdateTool(ERPNextTestSuite):
+class TestBOMUpdateTool(LiwaERPTestSuite):
 	"Test major functions run via BOM Update Tool."
 
 	def setUp(self):

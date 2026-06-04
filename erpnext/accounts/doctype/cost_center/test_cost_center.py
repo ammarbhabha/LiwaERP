@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestCostCenter(ERPNextTestSuite):
+class TestCostCenter(LiwaERPTestSuite):
 	def test_cost_center_creation_against_child_node(self):
 		cost_center = frappe.get_doc(
 			{

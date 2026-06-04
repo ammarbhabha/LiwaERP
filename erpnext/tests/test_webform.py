@@ -2,10 +2,10 @@ import frappe
 
 from erpnext.buying.doctype.purchase_order.test_purchase_order import create_purchase_order
 from erpnext.buying.doctype.supplier.test_supplier import create_supplier
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestWebsite(ERPNextTestSuite):
+class TestWebsite(LiwaERPTestSuite):
 	def test_permission_for_custom_doctype(self):
 		create_user("Supplier 1", "supplier1@gmail.com")
 		create_user("Supplier 2", "supplier2@gmail.com")

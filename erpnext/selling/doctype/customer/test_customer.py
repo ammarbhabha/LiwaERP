@@ -16,10 +16,10 @@ from erpnext.selling.doctype.customer.customer import (
 from erpnext.selling.doctype.customer.mapper import (
 	parse_full_name,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestCustomer(ERPNextTestSuite):
+class TestCustomer(LiwaERPTestSuite):
 	def test_get_customer_group_details(self):
 		doc = frappe.new_doc("Customer Group")
 		doc.customer_group_name = "_Testing Customer Group"

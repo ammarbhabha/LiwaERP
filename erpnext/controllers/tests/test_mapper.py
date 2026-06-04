@@ -5,10 +5,10 @@ import frappe.utils
 from frappe.model import mapper
 from frappe.utils import add_months, nowdate
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestMapper(ERPNextTestSuite):
+class TestMapper(LiwaERPTestSuite):
 	def setUp(self):
 		self.load_test_records("Sales Order")
 

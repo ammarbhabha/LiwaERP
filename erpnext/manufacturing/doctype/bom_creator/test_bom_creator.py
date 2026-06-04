@@ -10,10 +10,10 @@ from erpnext.manufacturing.doctype.bom_creator.bom_creator import (
 	add_sub_assembly,
 )
 from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBOMCreator(ERPNextTestSuite):
+class TestBOMCreator(LiwaERPTestSuite):
 	def setUp(self) -> None:
 		create_items()
 

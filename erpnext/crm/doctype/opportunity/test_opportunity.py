@@ -8,10 +8,10 @@ from erpnext.crm.doctype.lead.mapper import make_customer
 from erpnext.crm.doctype.lead.test_lead import make_lead
 from erpnext.crm.doctype.opportunity.mapper import make_quotation
 from erpnext.crm.utils import get_linked_communication_list
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestOpportunity(ERPNextTestSuite):
+class TestOpportunity(LiwaERPTestSuite):
 	@classmethod
 	def make_opportunities(cls):
 		records = [

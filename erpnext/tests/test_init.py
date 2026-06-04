@@ -1,29 +1,29 @@
 from erpnext import encode_company_abbr
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestInit(ERPNextTestSuite):
+class TestInit(LiwaERPTestSuite):
 	def test_encode_company_abbr(self):
 		abbr = "NFECT"
 
 		names = [
 			"Warehouse Name",
-			"ERPNext Foundation India",
+			"LiwaERP Foundation India",
 			f"Gold - Member - {abbr}",
 			f" - {abbr}",
-			"ERPNext - Foundation - India",
-			f"ERPNext Foundation India - {abbr}",
+			"LiwaERP - Foundation - India",
+			f"LiwaERP Foundation India - {abbr}",
 			f"No-Space-{abbr}",
 			"- Warehouse",
 		]
 
 		expected_names = [
 			f"Warehouse Name - {abbr}",
-			f"ERPNext Foundation India - {abbr}",
+			f"LiwaERP Foundation India - {abbr}",
 			f"Gold - Member - {abbr}",
 			f" - {abbr}",
-			f"ERPNext - Foundation - India - {abbr}",
-			f"ERPNext Foundation India - {abbr}",
+			f"LiwaERP - Foundation - India - {abbr}",
+			f"LiwaERP Foundation India - {abbr}",
 			f"No-Space-{abbr} - {abbr}",
 			f"- Warehouse - {abbr}",
 		]

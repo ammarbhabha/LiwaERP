@@ -3,14 +3,14 @@
 
 # import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
-# On ERPNextTestSuite, the doctype test records and all
+# On LiwaERPTestSuite, the doctype test records and all
 # link-field test record depdendencies are recursively loaded
 # Use these module variables to add/remove to/from that list
 
 
-class TestStockClosingEntry(ERPNextTestSuite):
+class TestStockClosingEntry(LiwaERPTestSuite):
 	"""
 	Integration tests for StockClosingEntry.
 	Use this class for testing interactions between multiple components.

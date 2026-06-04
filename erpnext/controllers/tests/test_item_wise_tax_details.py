@@ -1,10 +1,10 @@
 import frappe
 from frappe.utils import flt
 
-from erpnext.tests.utils import ERPNextTestSuite, change_settings
+from erpnext.tests.utils import LiwaERPTestSuite, change_settings
 
 
-class TestTaxesAndTotals(ERPNextTestSuite):
+class TestTaxesAndTotals(LiwaERPTestSuite):
 	def setUp(self):
 		self.doc = frappe.get_doc(
 			{

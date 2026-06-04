@@ -10,16 +10,16 @@ from erpnext.stock.doctype.stock_reservation_entry.test_stock_reservation_entry 
 	create_material_receipt,
 )
 from erpnext.stock.report.reserved_stock.reserved_stock import get_data as reserved_stock_report
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestReservedStock(ERPNextTestSuite):
+class TestReservedStock(LiwaERPTestSuite):
 	def setUp(self) -> None:
 		super().setUp()
 		self.stock_qty = 100
 		self.warehouse = "_Test Warehouse - _TC"
 
-	@ERPNextTestSuite.change_settings(
+	@LiwaERPTestSuite.change_settings(
 		"Stock Settings",
 		{
 			"allow_negative_stock": 0,

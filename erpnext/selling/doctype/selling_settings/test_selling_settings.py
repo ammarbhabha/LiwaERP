@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSellingSettings(ERPNextTestSuite):
+class TestSellingSettings(LiwaERPTestSuite):
 	def test_defaults_populated(self):
 		# Setup default values are not populated on migrate, this test checks
 		# if setup was completed correctly

@@ -13,10 +13,10 @@ from erpnext.stock.doctype.serial_and_batch_bundle.test_serial_and_batch_bundle 
 from erpnext.stock.doctype.stock_entry.test_stock_entry import make_stock_entry
 from erpnext.stock.doctype.warehouse.test_warehouse import create_warehouse
 from erpnext.stock.get_item_details import get_conversion_factor
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPutawayRule(ERPNextTestSuite):
+class TestPutawayRule(LiwaERPTestSuite):
 	def setUp(self):
 		if not frappe.db.exists("Item", "_Rice"):
 			make_item(

@@ -10,10 +10,10 @@ from erpnext.accounts.doctype.account.account import (
 	update_account_number,
 )
 from erpnext.stock import get_company_default_inventory_account, get_warehouse_account
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAccount(ERPNextTestSuite):
+class TestAccount(LiwaERPTestSuite):
 	def test_rename_account(self):
 		if not frappe.db.exists("Account", "1210 - Debtors - _TC"):
 			acc = frappe.new_doc("Account")

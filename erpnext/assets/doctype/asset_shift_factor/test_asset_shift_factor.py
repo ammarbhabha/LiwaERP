@@ -4,8 +4,8 @@
 # import frappe
 
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestAssetShiftFactor(ERPNextTestSuite):
+class TestAssetShiftFactor(LiwaERPTestSuite):
 	pass

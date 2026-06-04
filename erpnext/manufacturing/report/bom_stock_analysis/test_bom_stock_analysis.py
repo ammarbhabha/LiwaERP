@@ -8,7 +8,7 @@ from erpnext.manufacturing.report.bom_stock_analysis.bom_stock_analysis import (
 	execute as bom_stock_analysis_report,
 )
 from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
 def fmt_qty(value):
@@ -20,7 +20,7 @@ def fmt_rate(value):
 	return fmt_money(value, precision=2, currency=currency)
 
 
-class TestBOMStockAnalysis(ERPNextTestSuite):
+class TestBOMStockAnalysis(LiwaERPTestSuite):
 	def setUp(self):
 		self.fg_item, self.rm_items = create_items()
 		self.boms = create_boms(self.fg_item, self.rm_items)

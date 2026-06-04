@@ -1,6 +1,6 @@
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 INDEXED_FIELDS = {
 	"Bin": ["item_code"],
@@ -9,7 +9,7 @@ INDEXED_FIELDS = {
 }
 
 
-class TestPerformance(ERPNextTestSuite):
+class TestPerformance(LiwaERPTestSuite):
 	def test_ensure_indexes(self):
 		# These fields are not explicitly indexed BUT they are prefix in some
 		# other composite index. If those are removed this test should be

@@ -4,8 +4,8 @@
 # import frappe
 
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestProcessPaymentReconciliation(ERPNextTestSuite):
+class TestProcessPaymentReconciliation(LiwaERPTestSuite):
 	pass

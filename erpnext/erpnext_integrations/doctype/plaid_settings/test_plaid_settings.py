@@ -12,10 +12,10 @@ from erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings import (
 	get_plaid_configuration,
 	new_bank_transaction,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestPlaidSettings(ERPNextTestSuite):
+class TestPlaidSettings(LiwaERPTestSuite):
 	def test_plaid_disabled(self):
 		frappe.db.set_single_value("Plaid Settings", "enabled", 0)
 		self.assertEqual(get_plaid_configuration(), "disabled")

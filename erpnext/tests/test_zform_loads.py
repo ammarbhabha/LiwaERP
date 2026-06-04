@@ -4,11 +4,11 @@ import frappe
 from frappe.desk.form.load import getdoc
 from frappe.www.printview import get_html_and_style
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestFormLoads(ERPNextTestSuite):
-	@ERPNextTestSuite.change_settings("Print Settings", {"allow_print_for_cancelled": 1})
+class TestFormLoads(LiwaERPTestSuite):
+	@LiwaERPTestSuite.change_settings("Print Settings", {"allow_print_for_cancelled": 1})
 	def test_load(self):
 		erpnext_modules = frappe.get_all("Module Def", filters={"app_name": "erpnext"}, pluck="name")
 		doctypes = frappe.get_all(

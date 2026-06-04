@@ -3,13 +3,13 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 from ..quality_goal.test_quality_goal import get_quality_goal
 from .quality_review import review
 
 
-class TestQualityReview(ERPNextTestSuite):
+class TestQualityReview(LiwaERPTestSuite):
 	def test_review_creation(self):
 		quality_goal = get_quality_goal()
 		review()

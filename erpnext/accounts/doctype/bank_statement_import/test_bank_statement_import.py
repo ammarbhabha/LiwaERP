@@ -5,10 +5,10 @@ from erpnext.accounts.doctype.bank_statement_import.bank_statement_import import
 	is_mt940_format,
 	preprocess_mt940_content,
 )
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestBankStatementImport(ERPNextTestSuite):
+class TestBankStatementImport(LiwaERPTestSuite):
 	"""Unit tests for Bank Statement Import functions"""
 
 	def test_preprocess_mt940_content_with_long_statement_number(self):

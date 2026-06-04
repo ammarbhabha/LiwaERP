@@ -4,10 +4,10 @@ import json
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestLocation(ERPNextTestSuite):
+class TestLocation(LiwaERPTestSuite):
 	def test_location_features(self):
 		locations = ["Basil Farm", "Division 1", "Field 1", "Block 1"]
 		area = 0

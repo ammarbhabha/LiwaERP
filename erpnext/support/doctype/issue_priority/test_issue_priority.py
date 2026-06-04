@@ -3,10 +3,10 @@
 
 import frappe
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestIssuePriority(ERPNextTestSuite):
+class TestIssuePriority(LiwaERPTestSuite):
 	def test_priorities(self):
 		make_priorities()
 		priorities = frappe.get_list("Issue Priority")

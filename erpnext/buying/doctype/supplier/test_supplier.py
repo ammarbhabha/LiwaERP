@@ -7,10 +7,10 @@ import frappe
 from erpnext.accounts.party import get_due_date
 from erpnext.controllers.website_list_for_contact import get_customers_suppliers
 from erpnext.exceptions import PartyDisabled
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSupplier(ERPNextTestSuite):
+class TestSupplier(LiwaERPTestSuite):
 	def test_get_supplier_group_details(self):
 		doc = frappe.new_doc("Supplier Group")
 		doc.supplier_group_name = "_Testing Supplier Group"
@@ -180,10 +180,10 @@ def create_supplier(**args):
 	return doc
 
 
-from erpnext.tests.utils import ERPNextTestSuite
+from erpnext.tests.utils import LiwaERPTestSuite
 
 
-class TestSupplierPortal(ERPNextTestSuite):
+class TestSupplierPortal(LiwaERPTestSuite):
 	def test_portal_user_can_access_supplier_data(self):
 		supplier = create_supplier()
 
