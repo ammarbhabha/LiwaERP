@@ -137,7 +137,7 @@ To setup the repository locally follow the steps mentioned below:
 3. Get the LiwaERP app and install it
    ```
    # Get the LiwaERP app
-   bench get-app https://github.com/Ammarplays/LiwaERP
+   bench get-app https://github.com/ammarbhabha/LiwaERP
 
    # Install the app
    bench --site erpnext.localhost install-app erpnext
